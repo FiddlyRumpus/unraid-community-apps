@@ -1,1 +1,24 @@
-
+<Container version="2">
+  <Name>Gluetun-Latest</Name>
+  <Repository>passteque/gluetun</Repository>
+  <Registry>https://hub.docker.com/r/qmcgaw/gluetun</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <Overview>Explain what this container does and why users should install it.</Overview>
+  <Support>https://forums.unraid.net/topic/YOUR_SUPPORT_TOPIC</Support>
+  <Project>https://github.com/YOUR_GITHUB_USERNAME/YOUR_PLUGIN_REPO</Project>
+  <ReadMe>https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_PLUGIN_REPO/main/README.md</ReadMe>
+  <Discord>https://discord.gg/YOUR_DISCORD_INVITE_CODE</Discord>
+  <Category>Tools:System</Category>
+  <Beta>true</Beta>
+  <MinVer>6.1</MinVer>
+  <MaxVer>7.3</MaxVer>
+  <Deprecated>true</Deprecated>
+  <DeprecatedMaxVer>7.2</DeprecatedMaxVer>
+  <License>GPLv2</License>
+  <Screenshot>https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_PLUGIN_REPO/main/screenshot.png</Screenshot>
+  <Video>https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID</Video>
+</Container>
