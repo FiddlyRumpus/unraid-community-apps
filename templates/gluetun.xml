@@ -1,24 +1,19 @@
 <Container version="2">
   <Name>Gluetun-Latest</Name>
-  <Repository>passteque/gluetun</Repository>
-  <Registry>https://hub.docker.com/r/qmcgaw/gluetun</Registry>
-  <Network>bridge</Network>
-  <MyIP/>
-  <Shell>bash</Shell>
-  <Privileged>false</Privileged>
-  <WebUI>http://[IP]:[PORT:8080]</WebUI>
-  <Overview>Explain what this container does and why users should install it.</Overview>
+  <Repository>qmcgaw/gluetun:latest</Repository>
+  <Category>Network:VPN,Network:Privacy,Security,Tools:Utilities</Category>
+  <Icon>https://raw.githubusercontent.com/passteque/gluetun/master/title.svg</Icon>
+  <Overview>VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.</Overview>
+  <Project>https://github.com/passteque/gluetun</Project>
   <Support>https://forums.unraid.net/topic/YOUR_SUPPORT_TOPIC</Support>
-  <Project>https://github.com/YOUR_GITHUB_USERNAME/YOUR_PLUGIN_REPO</Project>
-  <ReadMe>https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_PLUGIN_REPO/main/README.md</ReadMe>
+  <ReadMe>https://github.com/passteque/gluetun/blob/master/README.md</ReadMe>
   <Discord>https://discord.gg/YOUR_DISCORD_INVITE_CODE</Discord>
-  <Category>Tools:System</Category>
-  <Beta>true</Beta>
+  <Beta>false</Beta>
   <MinVer>6.1</MinVer>
   <MaxVer>7.3</MaxVer>
-  <Deprecated>true</Deprecated>
+  <Deprecated>false</Deprecated>
   <DeprecatedMaxVer>7.2</DeprecatedMaxVer>
-  <License>GPLv2</License>
+  <License>https://github.com/passteque/gluetun/blob/master/LICENSE</License>
   <Screenshot>https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_PLUGIN_REPO/main/screenshot.png</Screenshot>
   <Video>https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID</Video>
 </Container>
