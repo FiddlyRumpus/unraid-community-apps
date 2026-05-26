@@ -34,9 +34,18 @@
     false
   </Beta>
   <Config>
-    <Config Name="TIMEZONE" Target="TZ" Default="" Mode="" Description="Specify a timezone for correct log times. i.e. Europe/London" Type="Variable" Display="always" Required="true" Mask="false" />
-    
     <Config Name="config" Target="/gluetun" Default="/mnt/user/appdata/gluetun-latest" Mode="rw" Description="Container Path: /gluetun" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gluetun-latest</Config>
+   
+    <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="info" Mode="" Description="OPTIONAL: Container Variable: LOG_LEVEL" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
+    <Config Name="TZ" Target="TZ" Default="" Mode="" Description="Specify a timezone for accurate logs. Use tz database format i.e. Europe/London" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="PUID" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
+    <Config Name="PUBLICIP_ENABLED" Target="PUBLICIP_ENABLED" Default="true|false" Mode="" Description="OPTIONAL: Check for public IP address information on VPN connection." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="PUBLICIP_API" Target="PUBLICIP_API" Default="ipinfo,ifconfigco,ip2location,cloudflare" Mode="" Description="OPT: Public IP echo service API to use or an echoip URL in the form echoip#https://xyz (ipinfo, ifconfigco, ip2location, cloudflare or custom URL)" Type="Variable" Display="always" Required="false" Mask="false">ipinfo,ifconfigco,ip2location,cloudflare</Config>
+    <Config Name="PUBLICIP_API_TOKEN" Target="PUBLICIP_API_TOKEN" Default="" Mode="" Description="OPT: Optional API token for the public IP echo service to increase rate limiting" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="PUBLICIP_FILE" Target="PUBLICIP_FILE" Default="/gluetun/ip" Mode="" Description="OPTIONAL: Filepath to store the public IP address assigned" Type="Variable" Display="advanced" Required="false" Mask="false">/gluetun/ip</Config>
+    <Config Name="VERSION_INFORMATION" Target="VERSION_INFORMATION" Default="on|off" Mode="" Description="OPTIONAL: Filepath to store the public IP address assigned" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
+    
     
     <!-- VPN options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md -->
     <Config Name="VPN_SERVICE_PROVIDER" Target="VPN_SERVICE_PROVIDER" Default="private internet access|airvpn|custom|cyberghost|expressvpn|fastestvpn|giganews|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|windscribe" Mode="" Description="REQ: Specify a supported VPN provider to use (Valid VPN provider)" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
@@ -59,23 +68,29 @@
     <Config Name="OPENVPN_ROOT" Target="OPENVPN_ROOT" Default="no|yes" Mode="" Description="OPT: Run OpenVPN as root (yes or no)" Type="Variable" Display="always" Required="false" Mask="false">no</Config>
     <Config Name="OPENVPN_CIPHERS" Target="OPENVPN_CIPHERS" Default="" Mode="" Description="OPT: Specify a custom cipher to use. It will also set ncp-disable if using AES GCM for PIA (i.e. aes-256-gcm)" Type="Variable" Display="always" Required="false" Mask="false" />
     <Config Name="OPENVPN_AUTH" Target="OPENVPN_AUTH" Default="" Mode="" Description="OPT: Specify a custom auth algorithm to use (i.e. sha256)" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="OPENVPN_MSSFIX" Target="OPENVPN_MSSFIX" Default="" Mode="" Description="OPT: Set the MSS fix parameter. Set to 0 to use the defaults. (0 to 9999)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+    <Config Name="OPENVPN_MSSFIX" Target="OPENVPN_MSSFIX" Default="0" Mode="" Description="OPT: Set the MSS fix parameter. Set to 0 to use the defaults. (0 to 9999)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
     <Config Name="OPENVPN_CERT" Target="OPENVPN_CERT" Default="" Mode="" Description="OPT: OpenVPN certificate content (base64 part only) (base64 PEM)" Type="Variable" Display="always" Required="false" Mask="false" /> 
     <Config Name="OPENVPN_KEY" Target="OPENVPN_KEY" Default="" Mode="" Description="OPT: OpenVPN key (base64 part only) (base64 PEM)" Type="Variable" Display="always" Required="false" Mask="false" />
     <Config Name="OPENVPN_ENCRYPTED_KEY" Target="OPENVPN_ENCRYPTED_KEY" Default="" Mode="" Description="OPT: OpenVPN encrypted key (base64 part only) (base64 PEM)" Type="Variable" Display="always" Required="false" Mask="false" />
     <Config Name="OPENVPN_KEY_PASSPHRASE" Target="OPENVPN_KEY_PASSPHRASE" Default="" Mode="" Description="OPT: Specify a key passphrase to decrypt an encrypted key" Type="Variable" Display="always" Required="false" Mask="true" />
-    <Config Name="OPENVPN_PROCESS_USER" Target="OPENVPN_PROCESS_USER" Default="" Mode="" Description="OPT: Specify a user to run the OpenVPN subprocess (Valid OS user)" Type="Variable" Display="always" Required="false" Mask="false">root</Config>
+    <Config Name="OPENVPN_PROCESS_USER" Target="OPENVPN_PROCESS_USER" Default="root" Mode="" Description="OPT: Specify a user to run the OpenVPN subprocess (Valid OS user)" Type="Variable" Display="always" Required="false" Mask="false">root</Config>
     <Config Name="OPENVPN_CUSTOM_CONFIG" Target="OPENVPN_CUSTOM_CONFIG" Default="" Mode="" Description="OPT: Specify a custom OpenVPN configuration file to use for the custom VPN provider. (Empty or path to file)" Type="Variable" Display="always" Required="false" Mask="false" />
     
     <!-- Wireguard options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md -->
-    <Config Name="WIREGUARD_PRIVATE_KEY" Target="WIREGUARD_PRIVATE_KEY" Default="" Mode="" Description="REQ: Wireguard client private key to use. Valid base 58 Wireguard key" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="WIREGUARD_ADDRESSES" Target="WIREGUARD_ADDRESSES" Default="" Mode="" Description="Valid IP network interface address in the format xx.xx.xx.xx/xx" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="WIREGUARD_PRESHARED_KEY" Target="WIREGUARD_PRESHARED_KEY" Default="" Mode="" Description="OPTINAL: 32 bytes pre-shared key in base64 format" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="WIREGUARD_PUBLIC_KEY" Target="WIREGUARD_PUBLIC_KEY" Default="" Mode="" Description="Only for VPN_SERVICE_PROVIDER=custom and VPN_TYPE=wireguard: Wireguard server public key" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="WIREGUARD_IMPLEMENTATION" Target="WIREGUARD_IMPLEMENTATION" Default="auto|userspace|kernelspace" Mode="" Description="Implementation of Wireguard to use." Type="Variable" Display="always" Required="false" Mask="false">auto</Config>
-    <Config Name="WIREGUARD_ALLOWED_IPS" Target="WIREGUARD_ALLOWED_IPS" Default="0.0.0.0/0,::/0" Mode="" Description="OPTIONAL: CSV of IP address ranges, only required if VPN_TYPE=wireguard. Note this is usually specific by user and the same for all servers." Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0/0,::/0</Config>
-    <Config Name="WIREGUARD_MTU" Target="WIREGUARD_MTU" Default="1320" Mode="" Description="OPTIONAL: Any positive value up to 65535, only required if VPN_TYPE=wireguard." Type="Variable" Display="always" Required="false" Mask="false">1320</Config>
-    <Config Name="WIREGUARD_PERSISTENT_KEEPALIVE_INTERVAL" Target="WIREGUARD_PERSISTENT_KEEPALIVE_INTERVAL" Default="" Mode="" Description="OPTIONAL: Wireguard persistent keepalive interval. i.e. 25s." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="WIREGUARD_PRIVATE_KEY" Target="WIREGUARD_PRIVATE_KEY" Default="" Mode="" Description="REQ: Wireguard client private key to use. This is usually always needed. (Valid base 58 Wireguard key)" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="WIREGUARD_ADDRESSES" Target="WIREGUARD_ADDRESSES" Default="" Mode="" Description="REQ: This is usually needed. (Valid IP network interface address in the format xx.xx.xx.xx/xx)" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="WIREGUARD_PUBLIC_KEY" Target="WIREGUARD_PUBLIC_KEY" Default="" Mode="" Description="REQ/OPT: Wireguard server public key to use. This may or may not be needed. (Valid base 58 Wireguard key)" Type="Variable" Display="always" Required="false" Mask="false" />
+   
+    <Config Name="WIREGUARD_ENDPOINT_IP" Target="WIREGUARD_ENPOINT_IP" Default="" Mode="" Description="OPT: Specify a generally optional target VPN server IP address to use (Valid IP address)" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="WIREGUARD_ENDPOINT_PORT" Target="WIREGUARD_ENPOINT_PORT" Default="" Mode="" Description="OPT: Specify a generally optional target VPN server port number to use (Valid port number)" Type="Variable" Display="always" Required="false" Mask="false" />
+    
+    <Config Name="WIREGUARD_PRESHARED_KEY" Target="WIREGUARD_PRESHARED_KEY" Default="" Mode="" Description="OPT: Wireguard pre-shared key (Base64 pre-shared key)" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="WIREGUARD_ALLOWED_IPS" Target="WIREGUARD_ALLOWED_IPS" Default="0.0.0.0/0,::/0" Mode="" Description="OPT:Wireguard peer allowed ips (CSV of IP address ranges)" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0/0,::/0</Config>
+    <Config Name="WIREGUARD_IMPLEMENTATION" Target="WIREGUARD_IMPLEMENTATION" Default="auto|kernelspace|userspace" Mode="" Description="Wireguard implementation to use (auto, kernelspace or userspace)" Type="Variable" Display="always" Required="false" Mask="false">auto</Config>
+    <!-- Default: 1320 https://github.com/passteque/gluetun/blob/17f24343d62bc1ce71cb5093c639272b25996a0f/internal/vpn/wireguard.go#L64 -->
+    <Config Name="WIREGUARD_MTU" Target="WIREGUARD_MTU" Default="1320" Mode="" Description="OPT: Wireguard MTU (Any positive value generally up to 1440)" Type="Variable" Display="always" Required="false" Mask="false">1320</Config>
+    <Config Name="WIREGUARD_PERSISTENT_KEEPALIVE_INTERVAL" Target="WIREGUARD_PERSISTENT_KEEPALIVE_INTERVAL" Default="" Mode="" Description="OPT: Wireguard persistent keepalive interval (Any duration, for example 25s)" Type="Variable" Display="always" Required="false" Mask="false" />
+
     
     <Config Name="SERVER_COUNTRIES" Target="SERVER_COUNTRIES" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN countries. https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="always" Required="false" Mask="false" />
     <Config Name="SERVER_CITIES" Target="SERVER_CITIES" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN cities. https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="always" Required="false" Mask="false" />
@@ -91,7 +106,6 @@
     <Config Name="FIREWALL_OUTBOUND_SUBNETS" Target="FIREWALL_OUTBOUND_SUBNETS" Default="" Mode="" Description="OPTIONAL: You first need to set your LAN CIDR in FIREWALL_OUTBOUND_SUBNETS. For example with FIREWALL_OUTBOUND_SUBNETS=192.168.1.0/24" Type="Variable" Display="always" Required="false" Mask="false" />
     <Config Name="FIREWALL_DEBUG" Target="FIREWALL_DEBUG" Default="off|on" Mode="" Description="OPTIONAL: Prints every firewall related command. You should use it for debugging purposes only." Type="Variable" Display="always" Required="false" Mask="false">off</Config>
     
-    <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="info" Mode="" Description="OPTIONAL: Container Variable: LOG_LEVEL" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
     
     <Config Name="DNS_SERVER" Target="DNS_SERVER" Default="on|off" Mode="" Description="(Recommended: on) Activate DNS over TLS (DOT) with Unbound" Type="Variable" Display="always" Required="false" Mask="false">on</Config>
     <Config Name="DNS_UPSTREAM_RESOLVERS" Target="DNS_UPSTREAM_RESOLVERS" Default="cira family|cira private|cira protected|cleanbrowsing adult|cleanbrowsing family|cleanbrowsing security|cloudflare|cloudflare family|cloudflare security|google|libredns|opendns|quad9|quad9 secured|quad9 unsecured|quadrant" Mode="" Description="Comma delimited list of DNS over TLS providers" Type="Variable" Display="always" Required="false" Mask="false">cloudflare</Config>
@@ -131,13 +145,9 @@
     
     <Config Name="HEALTH_SERVER_ADDRESS" Target="HEALTH_SERVER_ADDRESS" Default="127.0.0.1:9999" Mode="" Description="OPTIONAL: Internal Health Server Listening Addroess" Type="Variable" Display="advanced" Required="false" Mask="false">127.0.0.1:9999</Config>
     <Config Name="HEALTH_TARGET_ADDRESS" Target="HEALTH_TARGET_ADDRESS" Default="cloudflare.com:443" Mode="" Description="OPTIONAL: Address used to check tunnel health" Type="Variable" Display="advanced" Required="false" Mask="false">cloudflare.com:443</Config>
-    <Config Name="PUBLICIP_FILE" Target="PUBLICIP_FILE" Default="/gluetun/ip" Mode="" Description="OPTIONAL: Filepath to store the public IP address assigned" Type="Variable" Display="advanced" Required="false" Mask="false">/gluetun/ip</Config>
-    <Config Name="PUBLICIP_ENABLED" Target="PUBLICIP_ENABLED" Default="true|false" Mode="" Description="OPTIONAL: Check for public IP address information on VPN connection." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
-    <Config Name="VERSION_INFORMATION" Target="VERSION_INFORMATION" Default="on|off" Mode="" Description="OPTIONAL: Filepath to store the public IP address assigned" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
+
     <Config Name="HTTP_CONTROL_SERVER_PORT" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="advanced" Required="true" Mask="false">8000</Config>
     <Config Name="HTTP_CONTROL_SERVER_LOG" Target="HTTP_CONTROL_SERVER_LOG" Default="on|off" Mode="" Description="OPTIONAL: Enable logging of HTTP requests" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
-    <Config Name="PUID" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
-    <Config Name="PGID" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
   </Config>
   <Deprecated>
     false
