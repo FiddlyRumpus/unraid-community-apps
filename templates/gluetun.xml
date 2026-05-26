@@ -1,19 +1,86 @@
 <Container version="2">
-  <Name>Gluetun-Latest</Name>
-  <Repository>qmcgaw/gluetun:latest</Repository>
-  <Category>Network:VPN,Network:Privacy,Security,Tools:Utilities</Category>
-  <Icon>https://raw.githubusercontent.com/passteque/gluetun/master/title.svg</Icon>
-  <Overview>VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.</Overview>
-  <Project>https://github.com/passteque/gluetun</Project>
-  <Support>https://forums.unraid.net/topic/YOUR_SUPPORT_TOPIC</Support>
-  <ReadMe>https://github.com/passteque/gluetun/blob/master/README.md</ReadMe>
-  <Discord>https://discord.gg/YOUR_DISCORD_INVITE_CODE</Discord>
+  <Name>
+    Gluetun-Latest
+  </Name>
+  <Repository>
+    qmcgaw/gluetun:latest
+  </Repository>
+  <Category>
+    Network:VPN Network:Privacy Security Tools:Utilities
+  </Category>
+  <Icon>
+    https://raw.githubusercontent.com/qdm12/gluetun/master/doc/logo.svg
+  </Icon>
+  <Overview>
+    <p>
+      Gluetun: VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.
+    </p>
+    <p>
+      Community Application: The goal of this CA template is to keep all of Gluetun's variables and settings in-sync with the upstream repo / wiki.
+    </p>
+  </Overview>
+  <Project>
+    https://github.com/passteque/gluetun
+  </Project>
+  <Support>
+    https://forums.unraid.net/topic/YOUR_SUPPORT_TOPIC
+  </Support>
+  <TemplateURL>
+    https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/templates/gluetun.xml
+  </TemplateURL>
+  
   <Beta>false</Beta>
-  <MinVer>6.1</MinVer>
-  <MaxVer>7.3</MaxVer>
-  <Deprecated>false</Deprecated>
-  <DeprecatedMaxVer>7.2</DeprecatedMaxVer>
-  <License>https://github.com/passteque/gluetun/blob/master/LICENSE</License>
-  <Screenshot>https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_PLUGIN_REPO/main/screenshot.png</Screenshot>
-  <Video>https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID</Video>
+  <Changes>
+    2026-05-15 - Initial relase. Gluetun v3.41.1
+  </Changes>
+  <Config>
+    
+  </Config>
+  <Date>
+    2026-05-25
+  </Date>
+  <Deprecated>
+    false
+  </Deprecated>
+  <DeprecatedMaxVer/>
+  <Description/>
+  <Discord>
+    https://discord.gg/qz8JpZVhqN
+  </Discord>
+  <DonateLink>
+    https://https://www.paypal.me/qmcgaw
+  </DonateLink>
+  <DonateText>
+    Donate to Quentin McGaw, the maker of Gluetun, directly.
+  </DonateText>
+  <ExtraParams>
+    --cap-add=NET_ADMIN 
+    --restart always
+  </ExtraParams>
+  <License/>  
+  <MaxVer/>
+  <MinVer/>
+  <MyIP/>
+  <Network>
+    bridge
+  </Network>
+  <Privileged>
+    false
+  </Privileged>
+  <ReadMe>
+    https://github.com/passteque/gluetun/blob/master/README.md
+  </ReadMe>
+  <Reddit/>
+  <Registry>
+    https://hub.docker.com/r/qmcgaw/gluetun
+  </Registry>
+  <Requires/>
+  <Screenshot/>
+  <Shell>
+    bash
+  </Shell>
+  <Video/>
+  <WebUI>
+    http://[IP]:[PORT:8080]
+  </WebUI>
 </Container>
