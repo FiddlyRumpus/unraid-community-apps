@@ -9,8 +9,7 @@
 - Example-App
 - Gluetun-Latest \([Passteque/Gluetun](https://github.com/passteque/gluetun)\)
 
-This repository made from the official Unraid Community Apps Starter Template\
-[Unraid/Unraid-Community-Apps-Starter](https://github.com/unraid/unraid-community-apps-starter)
+[Unraid Community Apps Starter Template](https://github.com/unraid/unraid-community-apps-starter)
 
 <!--
 # Community Apps Starter Template
