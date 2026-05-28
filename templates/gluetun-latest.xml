@@ -34,27 +34,16 @@
     false
   </Beta>
   <Config>
+
+    <!-- <Config Name="" Target="" Default="" Mode="" Description="" Type="" Display="" Required="" Mask="" /> -->
+
     <Config Name="config" Target="/gluetun" Default="/mnt/user/appdata/gluetun-latest" Mode="rw" Description="Container Path: /gluetun" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gluetun-latest</Config>
-   
-    <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="info" Mode="" Description="OPTIONAL: Container Variable: LOG_LEVEL" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
-    <Config Name="TZ" Target="TZ" Default="" Mode="" Description="Specify a timezone for accurate logs. Use tz database format i.e. Europe/London" Type="Variable" Display="always" Required="true" Mask="false" />
-    <Config Name="PUID" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
-    <Config Name="PGID" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
-    <Config Name="PUBLICIP_ENABLED" Target="PUBLICIP_ENABLED" Default="true|false" Mode="" Description="OPTIONAL: Check for public IP address information on VPN connection." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
-    <Config Name="PUBLICIP_API" Target="PUBLICIP_API" Default="ipinfo,ifconfigco,ip2location,cloudflare" Mode="" Description="OPT: Public IP echo service API to use or an echoip URL in the form echoip#https://xyz (ipinfo, ifconfigco, ip2location, cloudflare or custom URL)" Type="Variable" Display="always" Required="false" Mask="false">ipinfo,ifconfigco,ip2location,cloudflare</Config>
-    <Config Name="PUBLICIP_API_TOKEN" Target="PUBLICIP_API_TOKEN" Default="" Mode="" Description="OPT: Optional API token for the public IP echo service to increase rate limiting" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="PUBLICIP_FILE" Target="PUBLICIP_FILE" Default="/gluetun/ip" Mode="" Description="OPTIONAL: Filepath to store the public IP address assigned" Type="Variable" Display="advanced" Required="false" Mask="false">/gluetun/ip</Config>
-    <Config Name="VERSION_INFORMATION" Target="VERSION_INFORMATION" Default="on|off" Mode="" Description="OPTIONAL: Filepath to store the public IP address assigned" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
-    
-    
-    <!-- VPN options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md -->
-    <Config Name="VPN_SERVICE_PROVIDER" Target="VPN_SERVICE_PROVIDER" Default="private internet access|airvpn|custom|cyberghost|expressvpn|fastestvpn|giganews|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|windscribe" Mode="" Description="REQ: Specify a supported VPN provider to use (Valid VPN provider)" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
-    <Config Name="VPN_TYPE" Target="VPN_TYPE" Default="openvpn|wireguard" Mode="" Description="REQ: VPN protocol to use. Not all providers support Wireguard. (openvpn or wireguard)" Type="Variable" Display="always" Required="true" Mask="false">openvpn</Config>
-    <Config Name="VPN_INTERFACE" Target="VPN_INTERFACE" Default="tun0" Mode="" Description="REQ: Specify a custom network interface name to use (Any interface name)" Type="Variable" Display="always" Required="true" Mask="false">tun0</Config>
-   
-    <Config Name="VPN_UP_COMMAND" Target="VPN_UP_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes up. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command)" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="VPN_DOWN_COMMAND" Target="VPN_DOWN_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes down. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command)" Type="Variable" Display="always" Required="false" Mask="false" />
-    
+
+    <!-- Control server options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/control-server.md -->
+    <Config Name="HTTP_CONTROL_SERVER_ADDRESS" Target="HTTP_CONTROL_SERVER_ADDRESS" Default="" Mode="" Description="OPT: Listening address for the HTTP control server (Valid listening address)" Type="Variable" Display="always" Required="false" Mask="false">:8000</Config>
+    <Config Name="HTTP_CONTROL_SERVER_LOG" Target="HTTP_CONTROL_SERVER_LOG" Default="on|off" Mode="" Description="OPT: Enable logging of HTTP requests (on or off)" Type="Variable" Display="always" Required="false" Mask="false">on</Config>
+    <Config Name="HTTP_CONTROL_SERVER_AUTH_CONFIG_FILEPATH" Target="HTTP_CONTROL_SERVER_AUTH_CONFIG_FILEPATH" Default="" Mode="" Description="OPT: Path to a TOML file containing authentication configuration (Valid path)" Type="Variable" Display="always" Required="false" Mask="false" />
+
     <!-- OpenVPN options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md -->
     <Config Name="OPENVPN_USER" Target="OPENVPN_USER" Default="" Mode="" Description="REQ: OpenVPN username" Type="Variable" Display="always" Required="false" Mask="false" />
     <Config Name="OPENVPN_PASSWORD" Target="OPENVPN_PASSWORD" Default="" Mode="" Description="REQ: OpenVPN password" Type="Variable" Display="always" Required="false" Mask="true" />
@@ -74,7 +63,36 @@
     <Config Name="OPENVPN_ENCRYPTED_KEY" Target="OPENVPN_ENCRYPTED_KEY" Default="" Mode="" Description="OPT: OpenVPN encrypted key (base64 part only) (base64 PEM)" Type="Variable" Display="always" Required="false" Mask="false" />
     <Config Name="OPENVPN_KEY_PASSPHRASE" Target="OPENVPN_KEY_PASSPHRASE" Default="" Mode="" Description="OPT: Specify a key passphrase to decrypt an encrypted key" Type="Variable" Display="always" Required="false" Mask="true" />
     <Config Name="OPENVPN_PROCESS_USER" Target="OPENVPN_PROCESS_USER" Default="root" Mode="" Description="OPT: Specify a user to run the OpenVPN subprocess (Valid OS user)" Type="Variable" Display="always" Required="false" Mask="false">root</Config>
-    <Config Name="OPENVPN_CUSTOM_CONFIG" Target="OPENVPN_CUSTOM_CONFIG" Default="" Mode="" Description="OPT: Specify a custom OpenVPN configuration file to use for the custom VPN provider. (Empty or path to file)" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="OPENVPN_CUSTOM_CONFIG" Target="OPENVPN_CUSTOM_CONFIG" Default="" Mode="" Description="OPT: Specify a custom OpenVPN configuration file to use for <a href="https://github.com/qdm12/gluetun-wiki/blob/main/setup/providers/custom.md">the custom VPN provider</a>. (Empty or path to file)" Type="Variable" Display="always" Required="false" Mask="false" />
+        
+    <!-- Other options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/others.md -->
+    <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="info|debug|warn|error" Mode="" Description="OPT: Set the logging level verbosity (debug,info,warn,error)" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
+    <Config Name="TIMEZONE" Target="TZ" Default="" Mode="" Description="OPT: Specify a <a href='https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List' target='_blank'>timezone</a> to use to have correct log times (i.e. Europe/London)" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="PUID" Target="PUID" Default="" Mode="" Description="OPT: User ID to run as non root and for ownership of files written (1000)" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="" Mode="" Description="OPT: Group ID to run as non root and for ownership of files written (1000)" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+    <Config Name="PUBLICIP_ENABLED" Target="PUBLICIP_ENABLED" Default="true|false" Mode="" Description="OPT: Check for public IP address information on VPN connection (true,false)" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="PUBLICIP_API" Target="PUBLICIP_API" Default="" Mode="" Description="OPT: Public IP echo service API to use or an echoip URL in the form echoip#https://xyz (ipinfo,ifconfigco,ip2location,cloudflare or custom URL)" Type="Variable" Display="always" Required="false" Mask="false">ipinfo,ifconfigco,ip2location,cloudflare</Config>
+    <Config Name="PUBLICIP_API_TOKEN" Target="PUBLICIP_API_TOKEN" Default="" Mode="" Description="OPT: Optional API token for the public IP echo service to increase rate limiting" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="PUBLICIP_FILE" Target="PUBLICIP_FILE" Default="/gluetun/ip" Mode="" Description="OPT: Filepath to store the public IP address assigned. This will be removed in the v4 program, instead you might want to use the <a href='https://github.com/qdm12/gluetun-wiki/blob/main/setup/advanced/control-server.md' target='_blank'>control server</a>" Type="Variable" Display="always" Required="false" Mask="false">/gluetun/ip</Config>
+    <Config Name="VERSION_INFORMATION" Target="VERSION_INFORMATION" Default="on|off" Mode="" Description="OPT: Logs a message indicating if a newer version is available once the VPN is connected (on,off)" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
+    <Config Name="BORINGPOLL_GLUETUNCOM" Target="BORINGPOLL_GLUETUNCOM" Default="off|on" Mode="" Description="Fight AI slop and help the Gluetun community by <a href='https://github.com/qdm12/gluetun/blob/master/internal/boringpoll/boringpoll.go' target='_blank'>polling periodically every few minutes a 500KB file</a> from gluetun[dot]com to make it unsustainable to host due to egress costs. (off,on)" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
+
+<!-- Servers updater options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md -->
+    <Config Name="UPDATER_PREFER_DIRECT_DOWNLOAD" Target="UPDATER_PREFER_DIRECT_DOWNLOAD" Default="no|yes" Mode="" Description="OPT: Whether to prefer direct download of servers data from <a href='https://github.com/qdm12/gluetun-servers/tree/main/pkg/servers' target='_blank'>gluetun-servers</a>, instead of using the Gluetun code to fetch, parse and process servers data. This is notably faster and more reliable, but defaults to no to avoid breaking compatibility." Type="Variable" Display="always" Required="false" Mask="false">no</Config>
+    <Config Name="UPDATER_PERIOD" Target="UPDATER_PERIOD" Default="0" Mode="" Description="OPT: Period to update the VPN servers data in memory and to /gluetun/servers/. Set to 0 to disable. This does a burst of DNS over HTTPs requests, which may be blocked if you set BLOCK_MALICIOUS=on for example. (Valid duration string such as 480h)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+    <Config Name="UPDATER_MIN_RATIO" Target="UPDATER_MIN_RATIO" Default="0.1|0.2|0.3|0.4|0.5|0.6|0.7|0.8|0.9|1" Mode="" Description="OPT: Ratio of servers to be found for the update to succeed, compared to the servers already built in the program (Ratio between 0 (excluded) and 1)" Type="Variable" Display="always" Required="false" Mask="false">0.8</Config>
+    <Config Name="UPDATER_VPN_SERVICE_PROVIDERS" Target="UPDATER_VPN_SERVICE_PROVIDERS" Default="airvpn|custom|cyberghost|expressvpn|fastestvpn|giganews|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|private internet access|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|windscribe" Mode="" Description="OPT: List of providers to update servers data for, when the updater triggers periodically. If left empty, it defaults to the current VPN provider used at start. (Any valid VPN provider name)" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="UPDATER_PROTONVPN_EMAIL" Target="UPDATER_PROTONVPN_EMAIL" Default="" Mode="" Description="OPT: If you need paid servers data, you must use a paid account. Otherwise I recommend creating a free throwaway account for this. (Your Proton email)" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="UPDATER_PROTONVPN_PASSWORD" Target="UPDATER_PROTONVPN_PASSWORD" Default="" Mode="" Description="OPT: If you need paid servers data, you must use a paid account. Otherwise I recommend creating a free throwaway account for this. (Your Proton password)" Type="Variable" Display="always" Required="false" Mask="true" />
+    
+    <!-- VPN options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md -->
+    <Config Name="VPN_SERVICE_PROVIDER" Target="VPN_SERVICE_PROVIDER" Default="private internet access|airvpn|custom|cyberghost|expressvpn|fastestvpn|giganews|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|windscribe" Mode="" Description="REQ: Specify a supported VPN provider to use (Valid VPN provider)" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
+    <Config Name="VPN_TYPE" Target="VPN_TYPE" Default="openvpn|wireguard" Mode="" Description="REQ: VPN protocol to use. Not all providers support Wireguard. (openvpn or wireguard)" Type="Variable" Display="always" Required="true" Mask="false">openvpn</Config>
+    <Config Name="VPN_INTERFACE" Target="VPN_INTERFACE" Default="tun0" Mode="" Description="REQ: Specify a custom network interface name to use (Any interface name)" Type="Variable" Display="always" Required="true" Mask="false">tun0</Config>
+   
+    <Config Name="VPN_UP_COMMAND" Target="VPN_UP_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes up. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command)" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="VPN_DOWN_COMMAND" Target="VPN_DOWN_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes down. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command)" Type="Variable" Display="always" Required="false" Mask="false" />
+    
     
     <!-- Wireguard options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md -->
     <Config Name="WIREGUARD_PRIVATE_KEY" Target="WIREGUARD_PRIVATE_KEY" Default="" Mode="" Description="REQ: Wireguard client private key to use. This is usually always needed. (Valid base 58 Wireguard key)" Type="Variable" Display="always" Required="false" Mask="false" />
@@ -133,8 +151,6 @@
     <Config Name="SHADOWSOCKS_PASSWORD" Target="SHADOWSOCKS_PASSWORD" Default="" Mode="" Description="OPTIONAL: Password to use to connect to Shadowsocks" Type="Variable" Display="always" Required="false" Mask="true" />
     <Config Name="SHADOWSOCKS_CIPHER" Target="SHADOWSOCKS_CIPHER" Default="chacha20-ietf-poly1305|aes-128-gcm|aes-256-gcm" Mode="" Description="OPTIONAL: Cipher to use for Shadowsocks" Type="Variable" Display="always" Required="false" Mask="false">chacha20-ietf-poly1305</Config>
     
-    <Config Name="UPDATER_PERIOD" Target="UPDATER_PERIOD" Default="0" Mode="" Description="OPTIONAL: Period to update all VPN servers information in memory and to /gluetun/servers.json. Set to 0 to disable. This does a burst of DNS over TLS requests, which may be blocked if you set BLOCK_MALICIOUS=on for example. Valid duration string such as 24h." Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
-    
     <Config Name="PORT_FORWARD_ONLY" Target="PORT_FORWARD_ONLY" Default="off|on" Mode="" Description="OPTIONAL: Filter only port-forwarding enabled (aka *p2p*) servers (pia and protonvpn only)" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
     <Config Name="VPN_PORT_FORWARDING_STATUS_FILE" Target="VPN_PORT_FORWARDING_STATUS_FILE" Default="/gluetun/forwarded_port" Mode="" Description="OPTIONAL: File path to use for writing the forwarded port obtained. https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="advanced" Required="false" Mask="false">/gluetun/forwarded_port</Config>
     <Config Name="VPN_PORT_FORWARDING_UP_COMMAND" Target="VPN_PORT_FORWARDING_UP_COMMAND" Default="" Mode="" Description="OPTIONAL: Command to run when port forwarding has finished setting up (pia and protonvpn only). https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="advanced" Required="false" Mask="false" />
@@ -145,9 +161,9 @@
     
     <Config Name="HEALTH_SERVER_ADDRESS" Target="HEALTH_SERVER_ADDRESS" Default="127.0.0.1:9999" Mode="" Description="OPTIONAL: Internal Health Server Listening Addroess" Type="Variable" Display="advanced" Required="false" Mask="false">127.0.0.1:9999</Config>
     <Config Name="HEALTH_TARGET_ADDRESS" Target="HEALTH_TARGET_ADDRESS" Default="cloudflare.com:443" Mode="" Description="OPTIONAL: Address used to check tunnel health" Type="Variable" Display="advanced" Required="false" Mask="false">cloudflare.com:443</Config>
+  
+    <!-- <Config Name="" Target="" Default="" Mode="" Description="" Type="" Display="" Required="" Mask="" /> -->
 
-    <Config Name="HTTP_CONTROL_SERVER_PORT" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="advanced" Required="true" Mask="false">8000</Config>
-    <Config Name="HTTP_CONTROL_SERVER_LOG" Target="HTTP_CONTROL_SERVER_LOG" Default="on|off" Mode="" Description="OPTIONAL: Enable logging of HTTP requests" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
   </Config>
   <Deprecated>
     false
