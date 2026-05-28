@@ -1,3 +1,18 @@
+# Unraid Community Apps Submission Repository
+
+## Plugins
+
+- None
+
+## Templates
+
+- Example-App
+- Gluetun-Latest \([Passteque/Gluetun](https://github.com/passteque/gluetun)\)
+
+This repository made from the official Unraid Community Apps Starter Template\
+[Unraid/Unraid-Community-Apps-Starter](https://github.com/unraid/unraid-community-apps-starter)
+
+<!--
 # Community Apps Starter Template
 
 Use this repository as a GitHub template when you want a clean starting point for a new Community Apps submission repository.
@@ -30,3 +45,4 @@ Use this repository as a GitHub template when you want a clean starting point fo
 - Every plugin entry needs a `<PluginURL>` tag.
 - Keep each template's `TemplateURL` pointed at the raw GitHub URL for that exact XML file.
 - Use an OSI-approved license before submitting.
+-->
