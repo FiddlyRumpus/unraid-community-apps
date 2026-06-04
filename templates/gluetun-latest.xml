@@ -215,7 +215,7 @@
     Donate directly to Quentin McGaw, the maker of Gluetun.
   </DonateText>
   <ExtraParams>
-    --cap-add=NET_ADMIN --restart always
+    --cap-add=NET_ADMIN --restart always --device /dev/net/tun
   </ExtraParams>
   <MyIP/>
   <Network>
