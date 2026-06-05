@@ -17,14 +17,14 @@
       Gluetun: VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.
     </p>
     <p>
-      Community Application: The goal of this CA template is to keep all of Gluetun's variables and settings in-sync with the upstream project, repo, + wiki.
+      Community Application: The goal of this Community Application is to try to keep all of the variables and settings for Gluetun in-sync with the upstream project, repo, + wiki.
     </p>
   </Overview>
   <Project>
     https://github.com/passteque/gluetun
   </Project>
   <Support>
-    https://forums.unraid.net/topic/YOUR_SUPPORT_TOPIC
+    https://forums.unraid.net/topic/
   </Support>
   <TemplateURL>
     https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/templates/gluetun-latest.xml
