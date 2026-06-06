@@ -1,9 +1,9 @@
 <Container version="2">
   <Name>
-    Gluetun-Latest
+    Gluetun-Full
   </Name>
   <Repository>
-    qmcgaw/gluetun:latest
+    qmcgaw/gluetun
   </Repository>
   
   <Category>
@@ -13,12 +13,9 @@
     https://raw.githubusercontent.com/passteque/gluetun/master/doc/logo.svg
   </Icon>
   <Overview>
-    <p>
-      Gluetun: VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.
-    </p>
-    <p>
-      Community Application: The goal of this Community Application is to try to keep all of the variables and settings for Gluetun in-sync with the upstream project, repo, + wiki.
-    </p>
+      Gluetun - VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.  
+
+      Community Application: The goal of Gluetun-Full is to include ALL of the variables and settings w/ wiki URLs for Gluetun from the upstream project, repo, + wiki and to keep them up-to-date.
   </Overview>
   <Project>
     https://github.com/passteque/gluetun
@@ -27,7 +24,7 @@
     https://forums.unraid.net/topic/
   </Support>
   <TemplateURL>
-    https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/templates/gluetun-latest.xml
+    https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/templates/gluetun-full.xml
   </TemplateURL>
   
   <Beta>
@@ -37,7 +34,7 @@
 
     <!-- <Config Name="" Target="" Default="" Mode="" Description="" Type="" Display="" Required="" Mask="" /> -->
 
-    <Config Name="config" Target="/gluetun" Default="/mnt/user/appdata/gluetun-latest" Mode="rw" Description="Container Path: /gluetun" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gluetun-latest</Config>
+    <Config Name="config" Target="/gluetun" Default="/mnt/cache/appdata/gluetun-full" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/gluetun-full</Config>
 
     <!-- Amneziawg options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md -->
     <Config Name="AMNEZIAWG_PRIVATE_KEY" Target="AMNEZIAWG_PRIVATE_KEY" Default="" Mode="" Description="REQ: Amneziawg client private key to use. This is usually always needed. (Valid base 58 Amneziawg key)" Type="Variable" Display="always" Required="false" Mask="false" />
@@ -61,7 +58,7 @@
     <Config Name="AMNEZIAWG_H2" Target="AMNEZIAWG_H2" Default="0" Mode="" Description="OPT: header range of the handshake response message (n or range n-m, with values from 0 to 4294967295)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
     <Config Name="AMNEZIAWG_H3" Target="AMNEZIAWG_H3" Default="0" Mode="" Description="OPT: header range of the handshake cookie reply message (n or range n-m, with values from 0 to 4294967295)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
     <Config Name="AMNEZIAWG_H4" Target="AMNEZIAWG_H4" Default="0" Mode="" Description="OPT: header range of the transport data message (n or range n-m, with values from 0 to 4294967295)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-    <Config Name="AMNEZIAWG_I1" Target="AMNEZIAWG_I1" Default="" Mode="" Description="OPT: See <a href='https://github.com/amnezia-vpn/amneziawg-go?tab=readme-ov-file#custom-signature-packets' target='_blank'>custom signature packets</a>" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="AMNEZIAWG_I1" Target="AMNEZIAWG_I1" Default="" Mode="" Description="OPT: See 'custom signature packets' (https://github.com/amnezia-vpn/amneziawg-go?tab=readme-ov-file#custom-signature-packets)" Type="Variable" Display="always" Required="false" Mask="false" />
     <Config Name="AMNEZIAWG_I2" Target="AMNEZIAWG_I2" Default="" Mode="" Description="OPT: See <a href='https://github.com/amnezia-vpn/amneziawg-go?tab=readme-ov-file#custom-signature-packets' target='_blank'>custom signature packets</a>" Type="Variable" Display="always" Required="false" Mask="false" />
     <Config Name="AMNEZIAWG_I3" Target="AMNEZIAWG_I3" Default="" Mode="" Description="OPT: See <a href='https://github.com/amnezia-vpn/amneziawg-go?tab=readme-ov-file#custom-signature-packets' target='_blank'>custom signature packets</a>" Type="Variable" Display="always" Required="false" Mask="false" />
     <Config Name="AMNEZIAWG_I4" Target="AMNEZIAWG_I4" Default="" Mode="" Description="OPT: See <a href='https://github.com/amnezia-vpn/amneziawg-go?tab=readme-ov-file#custom-signature-packets' target='_blank'>custom signature packets</a>" Type="Variable" Display="always" Required="false" Mask="false" />
@@ -72,7 +69,7 @@
     <Config Name="HTTP_CONTROL_SERVER_LOG" Target="HTTP_CONTROL_SERVER_LOG" Default="on|off" Mode="" Description="OPT: Enable logging of HTTP requests (on or off)" Type="Variable" Display="always" Required="false" Mask="false">on</Config>
     <Config Name="HTTP_CONTROL_SERVER_AUTH_CONFIG_FILEPATH" Target="HTTP_CONTROL_SERVER_AUTH_CONFIG_FILEPATH" Default="/gluetun/auth/config.toml" Mode="" Description="OPT: Path to a TOML file containing authentication configuration (Valid path)" Type="Variable" Display="always" Required="false" Mask="false" />
     <!-- Advanced options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/advanced/control-server.md -->
-    <Config Name="HTTP_CONTROL_SERVER_AUTH_DEFAULT_ROLE" Target="HTTP_CONTROL_SERVER_AUTH_DEFAULT_ROLE" Default="" Mode="" Description="ADV: For the lazies not willing to setup a configuration file (<a href='https://github.com/qdm12/gluetun-wiki/blob/main/setup/advanced/control-server.md#configuration' target='_blank'>Valid JSON string</a>)" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="HTTP_CONTROL_SERVER_AUTH_DEFAULT_ROLE" Target="HTTP_CONTROL_SERVER_AUTH_DEFAULT_ROLE" Default="" Mode="" Description="ADV: For the lazies not willing to setup a configuration file (Valid JSON string)(https://github.com/qdm12/gluetun-wiki/blob/main/setup/advanced/control-server.md#configuration)" Type="Variable" Display="always" Required="false" Mask="false" />
 
     <!-- DNS options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/dns.md -->
     <Config Name="DNS_UPSTREAM_RESOLVER_TYPE" Target="DNS_UPSTREAM_RESOLVER_TYPE" Default="dot|doh|plain" Mode="" Description="OPT: How to connect to the upstream DNS servers. dot means DNS over TLS, doh means DNS over HTTPS, plain means plain UDP DNS. (dot, doh or plain)" Type="Variable" Display="always" Required="false" Mask="false">dot</Config>
@@ -212,15 +209,15 @@
     false
   </Deprecated>
   <Description/>
-  <DonateLink>
-    https://www.paypal.me/qmcgaw
-  </DonateLink>
-  <DonateText>
-    Donate directly to Quentin McGaw, the maker of Gluetun.
-  </DonateText>
   <ExtraParams>
-    --cap-add=NET_ADMIN --restart always --device /dev/net/tun
+    --cap-add=NET_ADMIN --device /dev/net/tun:/dev/net/tun
   </ExtraParams>
+  <ExtraSearchTerms>
+    gluten glutin gluetin glutton gluton
+  </ExtraSearchTerms>
+  <Maintainer>
+    No relation to Mr. Frumpus.
+  </Maintainer>
   <MyIP/>
   <Network>
     bridge
