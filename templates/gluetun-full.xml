@@ -15,7 +15,7 @@
   <Overview>
     Gluetun - VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.
     
-    Gluetun-Full is an attempt to: include ALL of the documented paths, ports, &amp; variables available for Gluetun (set to their defaults) from the upstream project, repo, &amp; wiki; 
+    Gluetun-Full is an attempt to: include ALL of the published paths, ports, &amp; variables available for Gluetun (set to their defaults) from the upstream project, repo, &amp; wiki; 
     to keep them ALL as up-to-date as possible; and to include useful Gluetun-Wiki URLs for each, all presented in a useful Community Application for the Unraid community.
   </Overview>
   <Project>
@@ -268,11 +268,11 @@
         https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="false">0.8</Config>
       <Config Name="UPDATER_VPN_SERVICE_PROVIDERS" Target="UPDATER_VPN_SERVICE_PROVIDERS" Default="airvpn|custom|cyberghost|expressvpn|fastestvpn|giganews|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|private internet access|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|windscribe" Mode="" 
         Description="OPT: List of providers to update servers data for, when the updater triggers periodically. If left empty, it defaults to the current VPN provider used at start. (Any valid VPN provider name)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="false" />
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="false"/>
       <Config Name="UPDATER_PROTONVPN_EMAIL" Target="UPDATER_PROTONVPN_EMAIL" Default="" Mode="" Description="OPT: If you need paid servers data, you must use a paid account. Otherwise I recommend creating a free throwaway account for this. (Your Proton email)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="false" />
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="false"/>
       <Config Name="UPDATER_PROTONVPN_PASSWORD" Target="UPDATER_PROTONVPN_PASSWORD" Default="" Mode="" Description="OPT: If you need paid servers data, you must use a paid account. Otherwise I recommend creating a free throwaway account for this. (Your Proton password)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="true" />
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="true"/>
       
     <!-- VPN options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md -->
       <Config Name="VPN_SERVICE_PROVIDER" Target="VPN_SERVICE_PROVIDER" Default="airvpn|custom|cyberghost|expressvpn|fastestvpn|giganews|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|private internet access|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|windscribe" Mode="" 
@@ -283,9 +283,9 @@
       <Config Name="VPN_INTERFACE" Target="VPN_INTERFACE" Default="tun0" Mode="" Description="REQ: Specify a custom network interface name to use (Any interface name)  
         https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="true" Mask="false">tun0</Config>
       <Config Name="VPN_UP_COMMAND" Target="VPN_UP_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes up. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="false" Mask="false" />
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
       <Config Name="VPN_DOWN_COMMAND" Target="VPN_DOWN_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes down. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="false" Mask="false" />
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
     
     <!-- Wireguard options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md -->
       <Config Name="WIREGUARD_PRIVATE_KEY" Target="WIREGUARD_PRIVATE_KEY" Default="" Mode="" Description="REQ: Wireguard client private key to use. This is usually always needed. (Valid base 58 Wireguard key)  
@@ -311,21 +311,37 @@
         https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md" Type="Variable" Display="always" Required="false" Mask="false"/>
 
     <!-- Provider options: https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers -->
-      <Config Name="SERVER_COUNTRIES" Target="SERVER_COUNTRIES" Default="" Mode="" Description="OPT: Comma separated list of countries (providers: airvpn,cyberghost,expressvpn,fastestvpn,hidemyass,ipvanish,ivpn,mullvad,nordvpn,privado,privatevpn,protonvpn,purevpn,slickvpn,surfshark,torguard,vpn unlimited)" Type="Variable" Display="always" Required="false" Mask="false" />
-      <Config Name="SERVER_REGIONS" Target="SERVER_REGIONS" Default="" Mode="" Description="OPT: Comma separated list of regions (providers: airvpn,giganews,hidemyass,nordvpn,privado,private internet access,protonvpn,purevpn,slickvpn,surfshark,vpn secure,vpn unlimited,vyprvpn,windscribe)" Type="Variable" Display="always" Required="false" Mask="false" />
-      <Config Name="SERVER_CITIES" Target="SERVER_CITIES" Default="" Mode="" Description="OPT: Comma separated list of cities (providers: airvpn,expressvpn,fastestvpn,hidemyass,ipvanish,ivpn,mullvad,nordvpn,perfect privacy,privado,privatevpn,protonvpn,purevpn,slickvpn,surfshark,torguard,vpn secure,vpn unlimited,windscribe)" Type="Variable" Display="always" Required="false" Mask="false" />
-      <Config Name="SERVER_NAMES" Target="SERVER_NAMES" Default="" Mode="" Description="OPT: Comma separated list of server names (providers: airvpn,private internet access)" Type="Variable" Display="always" Required="false" Mask="false" />
-      <Config Name="SERVER_HOSTNAMES" Target="SERVER_HOSTNAMES" Default="" Mode="" Description="OPT: Comma separated list of server hostnames. Beware this is the narrowest filter, so if you set this to a single hostname and this hostname disappears from the Gluetun servers data due to an update, your container will no longer work until this filter is changed. I would suggest avoiding it unless you know this reliability risk. (providers: all EXCEPT perfect privacy)" Type="Variable" Display="always" Required="false" Mask="false" />
-      <Config Name="ISP" Target="ISP" Default="" Mode="" Description="OPT: Comma separated list of ISPs (providers: ivpn, mullvad)" Type="Variable" Display="always" Required="false" Mask="false" />
-      <Config Name="OWNED_ONLY" Target="OWNED_ONLY" Default="no|yes" Mode="" Description="OPT: If the VPN server is owned by Mullvad. It defaults to no, meaning it includes all servers. It can be set to yes. (provider: mullvad)" Type="Variable" Display="always" Required="false" Mask="false">no</Config>
-      <Config Name="SERVER_CATEGORIES" Target="SERVER_CATEGORIES" Default="" Mode="" Description="OPT: Comma separated list of server categories (provider: nordvpn)" Type="Variable" Display="always" Required="false" Mask="false" />
-      <Config Name="PORT_FORWARD_ONLY" Target="PORT_FORWARD_ONLY" Default="off|on|true|false" Mode="" Description="OPT: Set to true to select servers with port forwarding only. It defaults to false (provider: private internet access) (true or false) | Filter only port-forwarding enabled (aka p2p) servers by setting it to on. It defaults to off. (provider: protonvpn) (off or on)" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
-      <Config Name="PRIVATE_INTERNET_ACCESS_OPENVPN_ENCRYPTION_PRESET" Target="PRIVATE_INTERNET_ACCESS_OPENVPN_ENCRYPTION_PRESET" Default="strong" Mode="" Description="OPT: Encryption preset, defaulting to strong, which can be set to normal or strong (provider: private internet access)" Type="Variable" Display="always" Required="false" Mask="false">strong</Config>
-      <Config Name="FREE_ONLY" Target="FREE_ONLY" Default="off|on" Mode="" Description="OPT: Filter only free tier servers by setting it to on. It defaults to off (provider: protonvpn)" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
-      <Config Name="STREAM_ONLY" Target="STREAM_ONLY" Default="off|on" Mode="" Description="OPT: Filter only streaming servers by setting it to on. It defaults to off (provider: protonvpn)" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
-      <Config Name="SECURE_CORE_ONLY" Target="SECURE_CORE_ONLY" Default="off|on" Mode="" Description="OPT: Filter only secure core servers by setting it to on. It defaults to off. (provider: protonvpn)" Type="Variable" Display="always" Required="false" Mask="false">off</Config>    
-      <Config Name="TOR_ONLY" Target="TOR_ONLY" Default="off|on" Mode="" Description="OPT: Filter only TOR servers by setting it to on. It defaults to off (provider: protonvpn)" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
-      <Config Name="PREMIUM_ONLY" Target="PREMIUM_ONLY" Default="no|yes" Mode="" Description="OPT: yes or no (provider: vpn secure)" Type="Variable" Display="always" Required="false" Mask="false" />
+      <Config Name="SERVER_COUNTRIES" Target="SERVER_COUNTRIES" Default="" Mode="" Description="OPT: Comma separated list of countries (providers: airvpn,cyberghost,expressvpn,fastestvpn,hidemyass,ipvanish,ivpn,mullvad,nordvpn,privado,privatevpn,protonvpn,purevpn,slickvpn,surfshark,torguard,vpn unlimited)  
+        https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="SERVER_REGIONS" Target="SERVER_REGIONS" Default="" Mode="" Description="OPT: Comma separated list of regions (providers: airvpn,giganews,hidemyass,nordvpn,privado,private internet access,protonvpn,purevpn,slickvpn,surfshark,vpn secure,vpn unlimited,vyprvpn,windscribe)  
+        https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="SERVER_CITIES" Target="SERVER_CITIES" Default="" Mode="" Description="OPT: Comma separated list of cities (providers: airvpn,expressvpn,fastestvpn,hidemyass,ipvanish,ivpn,mullvad,nordvpn,perfect privacy,privado,privatevpn,protonvpn,purevpn,slickvpn,surfshark,torguard,vpn secure,vpn unlimited,windscribe)  
+        https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="SERVER_NAMES" Target="SERVER_NAMES" Default="" Mode="" Description="OPT: Comma separated list of server names (providers: airvpn,private internet access)  
+        https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="SERVER_HOSTNAMES" Target="SERVER_HOSTNAMES" Default="" Mode="" Description="OPT: Comma separated list of server hostnames. Beware this is the narrowest filter, so if you set this to a single hostname and this hostname disappears from the Gluetun servers data due to an update, your container will no longer work until this filter is changed. 
+        I would suggest avoiding it unless you know this reliability risk. (providers: all EXCEPT perfect privacy)  
+        https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="ISP" Target="ISP" Default="" Mode="" Description="OPT: Comma separated list of ISPs (providers: ivpn, mullvad)  
+        https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="OWNED_ONLY" Target="OWNED_ONLY" Default="no|yes" Mode="" Description="OPT: If the VPN server is owned by Mullvad. It defaults to no, meaning it includes all servers. It can be set to yes. (provider: mullvad)  
+        https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false">no</Config>
+      <Config Name="SERVER_CATEGORIES" Target="SERVER_CATEGORIES" Default="" Mode="" Description="OPT: Comma separated list of server categories (provider: nordvpn)  
+        https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="PORT_FORWARD_ONLY" Target="PORT_FORWARD_ONLY" Default="off|on|true|false" Mode="" Description="OPT: Set to true to select servers with port forwarding only. It defaults to false (provider: private internet access) (true or false) | Filter only port-forwarding enabled (aka p2p) servers by setting it to on. It defaults to off. (provider: protonvpn) (off or on)  
+        https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+      <Config Name="PRIVATE_INTERNET_ACCESS_OPENVPN_ENCRYPTION_PRESET" Target="PRIVATE_INTERNET_ACCESS_OPENVPN_ENCRYPTION_PRESET" Default="strong" Mode="" Description="OPT: Encryption preset, defaulting to strong, which can be set to normal or strong (provider: private internet access)  
+        https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false">strong</Config>
+      <Config Name="FREE_ONLY" Target="FREE_ONLY" Default="off|on" Mode="" Description="OPT: Filter only free tier servers by setting it to on. It defaults to off (provider: protonvpn)  
+        https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
+      <Config Name="STREAM_ONLY" Target="STREAM_ONLY" Default="off|on" Mode="" Description="OPT: Filter only streaming servers by setting it to on. It defaults to off (provider: protonvpn)  
+        https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
+      <Config Name="SECURE_CORE_ONLY" Target="SECURE_CORE_ONLY" Default="off|on" Mode="" Description="OPT: Filter only secure core servers by setting it to on. It defaults to off. (provider: protonvpn)  
+        https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false">off</Config>    
+      <Config Name="TOR_ONLY" Target="TOR_ONLY" Default="off|on" Mode="" Description="OPT: Filter only TOR servers by setting it to on. It defaults to off (provider: protonvpn)  
+        https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
+      <Config Name="PREMIUM_ONLY" Target="PREMIUM_ONLY" Default="no|yes" Mode="" Description="OPT: yes or no (provider: vpn secure)  
+        https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
     
     <!-- <Config Name="" Target="" Default="" Mode="" Description="" Type="" Display="" Required="" Mask="" /> -->
   </Config>
