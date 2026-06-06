@@ -10,13 +10,12 @@
     Network:VPN Network:Privacy Security: Tools:Utilities
   </Category>
   <Icon>
-    https://raw.githubusercontent.com/passteque/gluetun/master/doc/logo.svg
+    https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun/Icon.svg  
   </Icon>
   <Overview>
-      Gluetun - VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.  
+      Gluetun - VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.
 
-      Community Application: The goal of Gluetun-Full is to include ALL of the variables and settings w/ wiki URLs for Gluetun from the upstream project, repo, + wiki and to keep them up-to-date.
-  </Overview>
+      'Gluetun-Full' is an attempt to: include ALL of the documented paths, ports, &amp; variables available for Gluetun (set to their defaults) from the upstream project, repo, &amp; wiki; to keep them ALL as up-to-date as possible; and to include useful Gluetun-Wiki URLs for each, all presented in a useful Community Application for the Unraid community.</Overview>
   <Project>
     https://github.com/passteque/gluetun
   </Project>
@@ -37,13 +36,19 @@
     <Config Name="config" Target="/gluetun" Default="/mnt/cache/appdata/gluetun-full" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/gluetun-full</Config>
 
     <!-- Amneziawg options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md -->
-    <Config Name="AMNEZIAWG_PRIVATE_KEY" Target="AMNEZIAWG_PRIVATE_KEY" Default="" Mode="" Description="REQ: Amneziawg client private key to use. This is usually always needed. (Valid base 58 Amneziawg key)" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="AMNEZIAWG_ADDRESSES" Target="AMNEZIAWG_ADDRESSES" Default="" Mode="" Description="REQ: This is usually needed. (Valid IP network interface address in the format xx.xx.xx.xx/xx)" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="AMNEZIAWG_PUBLIC_KEY" Target="AMNEZIAWG_PUBLIC_KEY" Default="" Mode="" Description="REQ/OPT: Amneziawg server public key to use. This may or may not be needed. (Valid base 58 Amneziawg key)" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="AMNEZIAWG_ENDPOINT_IP" Target="AMNEZIAWG_ENDPOINT_IP" Default="" Mode="" Description="OPT/REQ: Specify a generally optional target VPN server IP address to use (Valid IP address)" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="AMNEZIAWG_ENDPOINT_PORT" Target="AMNEZIAWG_ENDPOINT_PORT" Default="" Mode="" Description="OPT/REQ: Specify a generally optional target VPN server port number to use (Valid port number)" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="AMNEZIAWG_PRIVATE_KEY" Target="AMNEZIAWG_PRIVATE_KEY" Default="" Mode="" Description="REQ: Amneziawg client private key to use. This is usually always needed. (Valid base 58 Amneziawg key)  
+      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="AMNEZIAWG_ADDRESSES" Target="AMNEZIAWG_ADDRESSES" Default="" Mode="" Description="REQ: This is usually needed. (Valid IP network interface address in the format xx.xx.xx.xx/xx)  
+      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="AMNEZIAWG_PUBLIC_KEY" Target="AMNEZIAWG_PUBLIC_KEY" Default="" Mode="" Description="REQ/OPT: Amneziawg server public key to use. This may or may not be needed. (Valid base 58 Amneziawg key)  
+      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="AMNEZIAWG_ENDPOINT_IP" Target="AMNEZIAWG_ENDPOINT_IP" Default="" Mode="" Description="OPT/REQ: Specify a generally optional target VPN server IP address to use (Valid IP address)  
+      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="AMNEZIAWG_ENDPOINT_PORT" Target="AMNEZIAWG_ENDPOINT_PORT" Default="" Mode="" Description="OPT/REQ: Specify a generally optional target VPN server port number to use (Valid port number)  
+      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="AMNEZIAWG_PRESHARED_KEY" Target="AMNEZIAWG_PRESHARED_KEY" Default="" Mode="" Description="OPT: Amneziawg pre-shared key (Base64 pre-shared key)" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="AMNEZIAWG_ALLOWED_IPS" Target="AMNEZIAWG_ALLOWED_IPS" Default="0.0.0.0/0,::/0" Mode="" Description="OPT: Amneziawg peer allowed ips (CSV of IP address ranges)" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0/0,::/0</Config>
+    <Config Name="AMNEZIAWG_ALLOWED_IPS" Target="AMNEZIAWG_ALLOWED_IPS" Default="0.0.0.0/0,::/0" Mode="" Description="OPT: Amneziawg peer allowed ips (CSV of IP address ranges)  
+      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0/0,::/0</Config>
     <!-- Default: 1320 https://github.com/passteque/gluetun/blob/17f24343d62bc1ce71cb5093c639272b25996a0f/internal/vpn/wireguard.go#L64 -->
     <Config Name="AMNEZIAWG_MTU" Target="AMNEZIAWG_MTU" Default="1320" Mode="" Description="OPT: Amneziawg MTU (Any positive value generally up to 1440, probably lower with Amneziawg)" Type="Variable" Display="always" Required="false" Mask="false">1320</Config>
     <Config Name="AMNEZIAWG_PERSISTENT_KEEPALIVE_INTERVAL" Target="AMNEZIAWG_PERSISTENT_KEEPALIVE_INTERVAL" Default="" Mode="" Description="OPT: Amneziawg persistent keepalive interval (Any duration, for example 25s)" Type="Variable" Display="always" Required="false" Mask="false" />
@@ -213,7 +218,7 @@
     --cap-add=NET_ADMIN --device /dev/net/tun:/dev/net/tun
   </ExtraParams>
   <ExtraSearchTerms>
-    gluten glutin gluetin glutton gluton
+    glue gluten glutin gluetin glutton gluton
   </ExtraSearchTerms>
   <Maintainer>
     No relation to Mr. Frumpus.
