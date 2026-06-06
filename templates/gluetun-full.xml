@@ -226,7 +226,8 @@
     <!-- VPN Server port forwarding options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/port-forwarding.md -->
       <Config Name="VPN_PORT_FORWARDING" Target="VPN_PORT_FORWARDING" Default="off|on" Mode="" Description="OPT: Enable custom port forwarding code for supported providers (off or on)  
         https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/port-forwarding.md" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
-      <Config Name="VPN_PORT_FORWARDING_PROVIDER" Target="VPN_PORT_FORWARDING_PROVIDER" Default="private internet access|perfect privacy|privatevpn|protonvpn" Mode="" Description="OPT: Choose the custom port forwarding code to use. This is useful when using the custom provider with Wireguard. For PIA, make sure you set SERVER_NAMES=<server-name>. (private internet access, perfect privacy, privatevpn, protonvpn)  
+      <Config Name="VPN_PORT_FORWARDING_PROVIDER" Target="VPN_PORT_FORWARDING_PROVIDER" Default="private internet access|perfect privacy|privatevpn|protonvpn" Mode="" Description="OPT: Choose the custom port forwarding code to use. This is useful when using the custom provider with Wireguard. 
+        For PIA, make sure you set SERVER_NAMES=<server-name>. (private internet access, perfect privacy, privatevpn, protonvpn)  
         https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/port-forwarding.md" Type="Variable" Display="always" Required="false" Mask="false"/>
       <Config Name="VPN_PORT_FORWARDING_PORTS_COUNT" Target="VPN_PORT_FORWARDING_PORTS_COUNT" Default="1|2|3|4|5" Mode="" Description="OPT: Number of TCP+UDP ports to forward. Can be up to 5 for ProtonVPN. (Depends on VPN provider)  
         https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/port-forwarding.md" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
@@ -241,60 +242,73 @@
   
     <!-- Shadowsocks options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/shadowsocks.md -->
       <Config Name="SHADOWSOCKS" Target="SHADOWSOCKS" Default="off|on" Mode="" Description="OPT: Enable the internal Shadowsocks proxy (on,off)  
-        " Type="Variable" Display="always" Required="false" Mask="false">off</Config>
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/shadowsocks.md" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
       <Config Name="SHADOWSOCKS_LOG" Target="SHADOWSOCKS_LOG" Default="off|on" Mode="" Description="OPT: Enable Shadowsocks logging (on,off)  
-        " Type="Variable" Display="always" Required="false" Mask="false">off</Config>
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/shadowsocks.md" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
       <Config Name="SHADOWSOCKS_LISTENING_ADDRESS" Target="8388" Default="8388" Mode="tcp" Description="OPT: Internal listening address for Shadowsocks (Listening address)  
-        " Type="Port" Display="always" Required="false" Mask="false">8388</Config>
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/shadowsocks.md" Type="Port" Display="always" Required="false" Mask="false">8388</Config>
       <Config Name="SHADOWSOCKS_PASSWORD" Target="SHADOWSOCKS_PASSWORD" Default="" Mode="" Description="OPT: Password to use to connect to Shadowsocks  
-        " Type="Variable" Display="always" Required="false" Mask="true" />
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/shadowsocks.md" Type="Variable" Display="always" Required="false" Mask="true"/>
       <Config Name="SHADOWSOCKS_CIPHER" Target="SHADOWSOCKS_CIPHER" Default="chacha20-ietf-poly1305|aes-128-gcm|aes-256-gcm" Mode="" Description="OPT: AEAD Cipher to use for Shadowsocks  
-        " Type="Variable" Display="always" Required="false" Mask="false">chacha20-ietf-poly1305</Config>
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/shadowsocks.md" Type="Variable" Display="always" Required="false" Mask="false">chacha20-ietf-poly1305</Config>
       
     <!-- Storage options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/storage.md -->
       <Config Name="STORAGE_SERVERS_ENABLED" Target="STORAGE_SERVERS_ENABLED" Default="yes|no" Mode="" Description="OPT: Enable or disable reading and writing servers to disk (yes or no)  
-        " Type="Variable" Display="always" Required="false" Mask="false">yes</Config>
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/storage.md" Type="Variable" Display="always" Required="false" Mask="false">yes</Config>
       <Config Name="STORAGE_SERVERS_DIRECTORY_PATH" Target="STORAGE_SERVERS_DIRECTORY_PATH" Default="/gluetun/servers" Mode="" Description="OPT: Path to the directory where server files are stored (Valid directory path)  
-        " Type="Path" Display="always" Required="false" Mask="false">/gluetun/servers</Config>
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/storage.md" Type="Path" Display="always" Required="false" Mask="false">/gluetun/servers</Config>
       
     <!-- Servers updater options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md -->
-      <Config Name="UPDATER_PREFER_DIRECT_DOWNLOAD" Target="UPDATER_PREFER_DIRECT_DOWNLOAD" Default="no|yes" Mode="" Description="OPT: Whether to prefer direct download of servers data from <a href='https://github.com/qdm12/gluetun-servers/tree/main/pkg/servers' target='_blank'>gluetun-servers</a>, instead of using the Gluetun code to fetch, parse and process servers data. This is notably faster and more reliable, but defaults to no to avoid breaking compatibility. (yes or no)  
-        " Type="Variable" Display="always" Required="false" Mask="false">no</Config>
+      <Config Name="UPDATER_PREFER_DIRECT_DOWNLOAD" Target="UPDATER_PREFER_DIRECT_DOWNLOAD" Default="no|yes" Mode="" Description="OPT: Whether to prefer direct download of servers data from [gluetun-servers](https://github.com/qdm12/gluetun-servers/tree/main/pkg/servers), instead of using the Gluetun code to fetch, parse and process servers data. 
+        This is notably faster and more reliable, but defaults to no to avoid breaking compatibility. (yes or no)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="false">no</Config>
       <Config Name="UPDATER_PERIOD" Target="UPDATER_PERIOD" Default="0|360h|480h" Mode="" Description="OPT: Period to update the VPN servers data in memory and to /gluetun/servers/. Set to 0 to disable. This does a burst of DNS over HTTPs requests, which may be blocked if you set BLOCK_MALICIOUS=on for example. (Valid duration string such as 480h)  
-        " Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
       <Config Name="UPDATER_MIN_RATIO" Target="UPDATER_MIN_RATIO" Default="0.1|0.2|0.3|0.4|0.5|0.6|0.7|0.8|0.9|1" Mode="" Description="OPT: Ratio of servers to be found for the update to succeed, compared to the servers already built in the program (Ratio between 0 (excluded) and 1)  
-        " Type="Variable" Display="always" Required="false" Mask="false">0.8</Config>
-      <Config Name="UPDATER_VPN_SERVICE_PROVIDERS" Target="UPDATER_VPN_SERVICE_PROVIDERS" Default="airvpn|custom|cyberghost|expressvpn|fastestvpn|giganews|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|private internet access|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|windscribe" Mode="" Description="OPT: List of providers to update servers data for, when the updater triggers periodically. If left empty, it defaults to the current VPN provider used at start. (Any valid VPN provider name)  
-        " Type="Variable" Display="always" Required="false" Mask="false" />
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="false">0.8</Config>
+      <Config Name="UPDATER_VPN_SERVICE_PROVIDERS" Target="UPDATER_VPN_SERVICE_PROVIDERS" Default="airvpn|custom|cyberghost|expressvpn|fastestvpn|giganews|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|private internet access|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|windscribe" Mode="" 
+        Description="OPT: List of providers to update servers data for, when the updater triggers periodically. If left empty, it defaults to the current VPN provider used at start. (Any valid VPN provider name)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="false" />
       <Config Name="UPDATER_PROTONVPN_EMAIL" Target="UPDATER_PROTONVPN_EMAIL" Default="" Mode="" Description="OPT: If you need paid servers data, you must use a paid account. Otherwise I recommend creating a free throwaway account for this. (Your Proton email)  
-        " Type="Variable" Display="always" Required="false" Mask="false" />
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="false" />
       <Config Name="UPDATER_PROTONVPN_PASSWORD" Target="UPDATER_PROTONVPN_PASSWORD" Default="" Mode="" Description="OPT: If you need paid servers data, you must use a paid account. Otherwise I recommend creating a free throwaway account for this. (Your Proton password)  
-        " Type="Variable" Display="always" Required="false" Mask="true" />
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="true" />
       
     <!-- VPN options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md -->
-      <Config Name="VPN_SERVICE_PROVIDER" Target="VPN_SERVICE_PROVIDER" Default="airvpn|custom|cyberghost|expressvpn|fastestvpn|giganews|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|private internet access|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|windscribe" Mode="" Description="REQ: Specify a supported VPN provider to use (Valid VPN provider)  
-        " Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
+      <Config Name="VPN_SERVICE_PROVIDER" Target="VPN_SERVICE_PROVIDER" Default="airvpn|custom|cyberghost|expressvpn|fastestvpn|giganews|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|private internet access|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|windscribe" Mode="" 
+        Description="REQ: Specify a supported VPN provider to use (Valid VPN provider)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
       <Config Name="VPN_TYPE" Target="VPN_TYPE" Default="openvpn|wireguard" Mode="" Description="REQ: VPN protocol to use. Not all providers support Wireguard. (openvpn or wireguard)  
-        " Type="Variable" Display="always" Required="true" Mask="false">openvpn</Config>
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="true" Mask="false">openvpn</Config>
       <Config Name="VPN_INTERFACE" Target="VPN_INTERFACE" Default="tun0" Mode="" Description="REQ: Specify a custom network interface name to use (Any interface name)  
-        " Type="Variable" Display="always" Required="true" Mask="false">tun0</Config>
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="true" Mask="false">tun0</Config>
       <Config Name="VPN_UP_COMMAND" Target="VPN_UP_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes up. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command)  
-        " Type="Variable" Display="always" Required="false" Mask="false" />
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="false" Mask="false" />
       <Config Name="VPN_DOWN_COMMAND" Target="VPN_DOWN_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes down. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command)  
-        " Type="Variable" Display="always" Required="false" Mask="false" />
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="false" Mask="false" />
     
     <!-- Wireguard options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md -->
-      <Config Name="WIREGUARD_PRIVATE_KEY" Target="WIREGUARD_PRIVATE_KEY" Default="" Mode="" Description="REQ: Wireguard client private key to use. This is usually always needed. (Valid base 58 Wireguard key)" Type="Variable" Display="always" Required="false" Mask="false" />
-      <Config Name="WIREGUARD_ADDRESSES" Target="WIREGUARD_ADDRESSES" Default="" Mode="" Description="REQ: This is usually needed. (Valid IP network interface address in the format xx.xx.xx.xx/xx)" Type="Variable" Display="always" Required="false" Mask="false" />
-      <Config Name="WIREGUARD_PUBLIC_KEY" Target="WIREGUARD_PUBLIC_KEY" Default="" Mode="" Description="REQ/OPT: Wireguard server public key to use. This may or may not be needed. (Valid base 58 Wireguard key)" Type="Variable" Display="always" Required="false" Mask="false" />
-      <Config Name="WIREGUARD_ENDPOINT_IP" Target="WIREGUARD_ENPOINT_IP" Default="" Mode="" Description="OPT/REQ: Specify a generally optional target VPN server IP address to use (Valid IP address)" Type="Variable" Display="always" Required="false" Mask="false" />
-      <Config Name="WIREGUARD_ENDPOINT_PORT" Target="WIREGUARD_ENPOINT_PORT" Default="" Mode="" Description="OPT/REQ: Specify a generally optional target VPN server port number to use (Valid port number)" Type="Variable" Display="always" Required="false" Mask="false" />    
-      <Config Name="WIREGUARD_PRESHARED_KEY" Target="WIREGUARD_PRESHARED_KEY" Default="" Mode="" Description="OPT: Wireguard pre-shared key (Base64 pre-shared key)" Type="Variable" Display="always" Required="false" Mask="false" />
-      <Config Name="WIREGUARD_ALLOWED_IPS" Target="WIREGUARD_ALLOWED_IPS" Default="0.0.0.0/0,::/0" Mode="" Description="OPT: Wireguard peer allowed ips (CSV of IP address ranges)" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0/0,::/0</Config>
-      <Config Name="WIREGUARD_IMPLEMENTATION" Target="WIREGUARD_IMPLEMENTATION" Default="auto|kernelspace|userspace" Mode="" Description="Wireguard implementation to use (auto, kernelspace or userspace)" Type="Variable" Display="always" Required="false" Mask="false">auto</Config>
+      <Config Name="WIREGUARD_PRIVATE_KEY" Target="WIREGUARD_PRIVATE_KEY" Default="" Mode="" Description="REQ: Wireguard client private key to use. This is usually always needed. (Valid base 58 Wireguard key)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="WIREGUARD_ADDRESSES" Target="WIREGUARD_ADDRESSES" Default="" Mode="" Description="REQ: This is usually needed. (Valid IP network interface address in the format xx.xx.xx.xx/xx)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="WIREGUARD_PUBLIC_KEY" Target="WIREGUARD_PUBLIC_KEY" Default="" Mode="" Description="REQ/OPT: Wireguard server public key to use. This may or may not be needed. (Valid base 58 Wireguard key)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="WIREGUARD_ENDPOINT_IP" Target="WIREGUARD_ENPOINT_IP" Default="" Mode="" Description="OPT/REQ: Specify a generally optional target VPN server IP address to use (Valid IP address)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="WIREGUARD_ENDPOINT_PORT" Target="WIREGUARD_ENPOINT_PORT" Default="" Mode="" Description="OPT/REQ: Specify a generally optional target VPN server port number to use (Valid port number)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md" Type="Variable" Display="always" Required="false" Mask="false"/>    
+      <Config Name="WIREGUARD_PRESHARED_KEY" Target="WIREGUARD_PRESHARED_KEY" Default="" Mode="" Description="OPT: Wireguard pre-shared key (Base64 pre-shared key)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="WIREGUARD_ALLOWED_IPS" Target="WIREGUARD_ALLOWED_IPS" Default="0.0.0.0/0,::/0" Mode="" Description="OPT: Wireguard peer allowed ips (CSV of IP address ranges)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0/0,::/0</Config>
+      <Config Name="WIREGUARD_IMPLEMENTATION" Target="WIREGUARD_IMPLEMENTATION" Default="auto|kernelspace|userspace" Mode="" Description="Wireguard implementation to use (auto, kernelspace or userspace)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md" Type="Variable" Display="always" Required="false" Mask="false">auto</Config>
           <!-- Default: 1320 https://github.com/passteque/gluetun/blob/17f24343d62bc1ce71cb5093c639272b25996a0f/internal/vpn/wireguard.go#L64 -->
-      <Config Name="WIREGUARD_MTU" Target="WIREGUARD_MTU" Default="1320" Mode="" Description="OPT: Wireguard MTU (Any positive value generally up to 1440)" Type="Variable" Display="always" Required="false" Mask="false">1320</Config>
-      <Config Name="WIREGUARD_PERSISTENT_KEEPALIVE_INTERVAL" Target="WIREGUARD_PERSISTENT_KEEPALIVE_INTERVAL" Default="" Mode="" Description="OPT: Wireguard persistent keepalive interval (Any duration, for example 25s)" Type="Variable" Display="always" Required="false" Mask="false" />
+      <Config Name="WIREGUARD_MTU" Target="WIREGUARD_MTU" Default="1320" Mode="" Description="OPT: Wireguard MTU (Any positive value generally up to 1440)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md" Type="Variable" Display="always" Required="false" Mask="false">1320</Config>
+      <Config Name="WIREGUARD_PERSISTENT_KEEPALIVE_INTERVAL" Target="WIREGUARD_PERSISTENT_KEEPALIVE_INTERVAL" Default="" Mode="" Description="OPT: Wireguard persistent keepalive interval (Any duration, for example 25s)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md" Type="Variable" Display="always" Required="false" Mask="false"/>
 
     <!-- Provider options: https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers -->
       <Config Name="SERVER_COUNTRIES" Target="SERVER_COUNTRIES" Default="" Mode="" Description="OPT: Comma separated list of countries (providers: airvpn,cyberghost,expressvpn,fastestvpn,hidemyass,ipvanish,ivpn,mullvad,nordvpn,privado,privatevpn,protonvpn,purevpn,slickvpn,surfshark,torguard,vpn unlimited)" Type="Variable" Display="always" Required="false" Mask="false" />
