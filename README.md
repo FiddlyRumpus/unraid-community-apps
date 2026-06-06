@@ -7,7 +7,8 @@
 ## Templates
 
 - Example-App
-- Gluetun-Latest \(from [Passteque/Gluetun](https://github.com/passteque/gluetun)\)
+- Gluetun-Full \(from [Passteque/Gluetun](https://github.com/passteque/gluetun)\)
+
 
 [Unraid Community Apps Starter Template](https://github.com/unraid/unraid-community-apps-starter)
 
