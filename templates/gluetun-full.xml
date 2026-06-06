@@ -13,9 +13,8 @@
     https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun/Icon.svg  
   </Icon>
   <Overview>
-      Gluetun - VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.
-
-      'Gluetun-Full' is an attempt to: include ALL of the documented paths, ports, &amp; variables available for Gluetun (set to their defaults) from the upstream project, repo, &amp; wiki; to keep them ALL as up-to-date as possible; and to include useful Gluetun-Wiki URLs for each, all presented in a useful Community Application for the Unraid community.</Overview>
+    Gluetun - VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.
+    Gluetun-Full is an attempt to: include ALL of the documented paths, ports, &amp; variables available for Gluetun (set to their defaults) from the upstream project, repo, &amp; wiki; to keep them ALL as up-to-date as possible; and to include useful Gluetun-Wiki URLs for each, all presented in a useful Community Application for the Unraid community.</Overview>
   <Project>
     https://github.com/passteque/gluetun
   </Project>
@@ -30,61 +29,91 @@
     false
   </Beta>
   <Config>
+    <!-- <Config Name="" Target="" Default="" Mode="" Description="" Type="" Display="always" Required="false" Mask="false" /> -->
 
-    <!-- <Config Name="" Target="" Default="" Mode="" Description="" Type="" Display="" Required="" Mask="" /> -->
-
-    <Config Name="config" Target="/gluetun" Default="/mnt/cache/appdata/gluetun-full" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/gluetun-full</Config>
+      <Config Name="config" Target="/gluetun" Default="/mnt/cache/appdata/gluetun-full" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/gluetun-full</Config>
 
     <!-- Amneziawg options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md -->
-    <Config Name="AMNEZIAWG_PRIVATE_KEY" Target="AMNEZIAWG_PRIVATE_KEY" Default="" Mode="" Description="REQ: Amneziawg client private key to use. This is usually always needed. (Valid base 58 Amneziawg key)  
-      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="AMNEZIAWG_ADDRESSES" Target="AMNEZIAWG_ADDRESSES" Default="" Mode="" Description="REQ: This is usually needed. (Valid IP network interface address in the format xx.xx.xx.xx/xx)  
-      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="AMNEZIAWG_PUBLIC_KEY" Target="AMNEZIAWG_PUBLIC_KEY" Default="" Mode="" Description="REQ/OPT: Amneziawg server public key to use. This may or may not be needed. (Valid base 58 Amneziawg key)  
-      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="AMNEZIAWG_ENDPOINT_IP" Target="AMNEZIAWG_ENDPOINT_IP" Default="" Mode="" Description="OPT/REQ: Specify a generally optional target VPN server IP address to use (Valid IP address)  
-      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="AMNEZIAWG_ENDPOINT_PORT" Target="AMNEZIAWG_ENDPOINT_PORT" Default="" Mode="" Description="OPT/REQ: Specify a generally optional target VPN server port number to use (Valid port number)  
-      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="AMNEZIAWG_PRESHARED_KEY" Target="AMNEZIAWG_PRESHARED_KEY" Default="" Mode="" Description="OPT: Amneziawg pre-shared key (Base64 pre-shared key)" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="AMNEZIAWG_ALLOWED_IPS" Target="AMNEZIAWG_ALLOWED_IPS" Default="0.0.0.0/0,::/0" Mode="" Description="OPT: Amneziawg peer allowed ips (CSV of IP address ranges)  
-      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0/0,::/0</Config>
-    <!-- Default: 1320 https://github.com/passteque/gluetun/blob/17f24343d62bc1ce71cb5093c639272b25996a0f/internal/vpn/wireguard.go#L64 -->
-    <Config Name="AMNEZIAWG_MTU" Target="AMNEZIAWG_MTU" Default="1320" Mode="" Description="OPT: Amneziawg MTU (Any positive value generally up to 1440, probably lower with Amneziawg)" Type="Variable" Display="always" Required="false" Mask="false">1320</Config>
-    <Config Name="AMNEZIAWG_PERSISTENT_KEEPALIVE_INTERVAL" Target="AMNEZIAWG_PERSISTENT_KEEPALIVE_INTERVAL" Default="" Mode="" Description="OPT: Amneziawg persistent keepalive interval (Any duration, for example 25s)" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="AMNEZIAWG_JC" Target="AMNEZIAWG_JC" Default="0" Mode="" Description="OPT: Number of junk packets following I1-I5 and sent before the actual handshake initiation (Any positive integer)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-    <Config Name="AMNEZIAWG_JMIN" Target="AMNEZIAWG_JMIN" Default="0" Mode="" Description="OPT: Minimum size in bytes of the random junk data prefixed to the handshake packet (Any positive integer and must be less than or equal to AMNEZIAWG_JMAX)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-    <Config Name="AMNEZIAWG_JMAX" Target="AMNEZIAWG_JMAX" Default="0" Mode="" Description="OPT: Maximum size in bytes of the random junk data prefixed to the handshake packet (Any positive integer and must be greater than or equal to AMNEZIAWG_JMIN)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-    <Config Name="AMNEZIAWG_S1" Target="AMNEZIAWG_S1" Default="0" Mode="" Description="OPT: Random bytes to pad the handshake initiation packets (Any positive integer)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-    <Config Name="AMNEZIAWG_S2" Target="AMNEZIAWG_S2" Default="0" Mode="" Description="OPT: Random bytes to pad the handshake response packets (Any positive integer)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-    <Config Name="AMNEZIAWG_S3" Target="AMNEZIAWG_S3" Default="0" Mode="" Description="OPT: Random bytes to pad the handshake cookie reply packets (Any positive integer)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-    <Config Name="AMNEZIAWG_S4" Target="AMNEZIAWG_S4" Default="0" Mode="" Description="OPT: Random bytes to pad the encrypted transport data packets (Any positive integer)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-    <Config Name="AMNEZIAWG_H1" Target="AMNEZIAWG_H1" Default="0" Mode="" Description="OPT: header range of the handshake initiation message (n or range n-m, with values from 0 to 4294967295)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-    <Config Name="AMNEZIAWG_H2" Target="AMNEZIAWG_H2" Default="0" Mode="" Description="OPT: header range of the handshake response message (n or range n-m, with values from 0 to 4294967295)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-    <Config Name="AMNEZIAWG_H3" Target="AMNEZIAWG_H3" Default="0" Mode="" Description="OPT: header range of the handshake cookie reply message (n or range n-m, with values from 0 to 4294967295)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-    <Config Name="AMNEZIAWG_H4" Target="AMNEZIAWG_H4" Default="0" Mode="" Description="OPT: header range of the transport data message (n or range n-m, with values from 0 to 4294967295)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-    <Config Name="AMNEZIAWG_I1" Target="AMNEZIAWG_I1" Default="" Mode="" Description="OPT: See 'custom signature packets' (https://github.com/amnezia-vpn/amneziawg-go?tab=readme-ov-file#custom-signature-packets)" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="AMNEZIAWG_I2" Target="AMNEZIAWG_I2" Default="" Mode="" Description="OPT: See <a href='https://github.com/amnezia-vpn/amneziawg-go?tab=readme-ov-file#custom-signature-packets' target='_blank'>custom signature packets</a>" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="AMNEZIAWG_I3" Target="AMNEZIAWG_I3" Default="" Mode="" Description="OPT: See <a href='https://github.com/amnezia-vpn/amneziawg-go?tab=readme-ov-file#custom-signature-packets' target='_blank'>custom signature packets</a>" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="AMNEZIAWG_I4" Target="AMNEZIAWG_I4" Default="" Mode="" Description="OPT: See <a href='https://github.com/amnezia-vpn/amneziawg-go?tab=readme-ov-file#custom-signature-packets' target='_blank'>custom signature packets</a>" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="AMNEZIAWG_I5" Target="AMNEZIAWG_I5" Default="" Mode="" Description="OPT: See <a href='https://github.com/amnezia-vpn/amneziawg-go?tab=readme-ov-file#custom-signature-packets' target='_blank'>custom signature packets</a>" Type="Variable" Display="always" Required="false" Mask="false" />
-
+      <Config Name="AMNEZIAWG_PRIVATE_KEY" Target="AMNEZIAWG_PRIVATE_KEY" Default="" Mode="" Description="REQ: Amneziawg client private key to use. This is usually always needed. (Valid base 58 Amneziawg key)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="AMNEZIAWG_ADDRESSES" Target="AMNEZIAWG_ADDRESSES" Default="" Mode="" Description="REQ: This is usually needed. (Valid IP network interface address in the format xx.xx.xx.xx/xx)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="AMNEZIAWG_PUBLIC_KEY" Target="AMNEZIAWG_PUBLIC_KEY" Default="" Mode="" Description="REQ/OPT: Amneziawg server public key to use. This may or may not be needed. (Valid base 58 Amneziawg key)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="AMNEZIAWG_ENDPOINT_IP" Target="AMNEZIAWG_ENDPOINT_IP" Default="" Mode="" Description="OPT/REQ: Specify a generally optional target VPN server IP address to use (Valid IP address)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="AMNEZIAWG_ENDPOINT_PORT" Target="AMNEZIAWG_ENDPOINT_PORT" Default="" Mode="" Description="OPT/REQ: Specify a generally optional target VPN server port number to use (Valid port number)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="AMNEZIAWG_PRESHARED_KEY" Target="AMNEZIAWG_PRESHARED_KEY" Default="" Mode="" Description="OPT: Amneziawg pre-shared key (Base64 pre-shared key)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="AMNEZIAWG_ALLOWED_IPS" Target="AMNEZIAWG_ALLOWED_IPS" Default="0.0.0.0/0,::/0" Mode="" Description="OPT: Amneziawg peer allowed ips (CSV of IP address ranges)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0/0,::/0</Config>
+      <Config Name="AMNEZIAWG_MTU" Target="AMNEZIAWG_MTU" Default="1320" Mode="" Description="OPT: Amneziawg MTU (Any positive value generally up to 1440, probably lower with Amneziawg)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false">1320</Config>
+          <!-- Default: 1320 https://github.com/passteque/gluetun/blob/17f24343d62bc1ce71cb5093c639272b25996a0f/internal/vpn/wireguard.go#L64 -->
+      <Config Name="AMNEZIAWG_PERSISTENT_KEEPALIVE_INTERVAL" Target="AMNEZIAWG_PERSISTENT_KEEPALIVE_INTERVAL" Default="" Mode="" Description="OPT: Amneziawg persistent keepalive interval (Any duration, for example 25s)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="AMNEZIAWG_JC" Target="AMNEZIAWG_JC" Default="0" Mode="" Description="OPT: Number of junk packets following I1-I5 and sent before the actual handshake initiation (Any positive integer)
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+      <Config Name="AMNEZIAWG_JMIN" Target="AMNEZIAWG_JMIN" Default="0" Mode="" Description="OPT: Minimum size in bytes of the random junk data prefixed to the handshake packet (Any positive integer and must be less than or equal to AMNEZIAWG_JMAX)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+      <Config Name="AMNEZIAWG_JMAX" Target="AMNEZIAWG_JMAX" Default="0" Mode="" Description="OPT: Maximum size in bytes of the random junk data prefixed to the handshake packet (Any positive integer and must be greater than or equal to AMNEZIAWG_JMIN)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+      <Config Name="AMNEZIAWG_S1" Target="AMNEZIAWG_S1" Default="0" Mode="" Description="OPT: Random bytes to pad the handshake initiation packets (Any positive integer)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+      <Config Name="AMNEZIAWG_S2" Target="AMNEZIAWG_S2" Default="0" Mode="" Description="OPT: Random bytes to pad the handshake response packets (Any positive integer)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+      <Config Name="AMNEZIAWG_S3" Target="AMNEZIAWG_S3" Default="0" Mode="" Description="OPT: Random bytes to pad the handshake cookie reply packets (Any positive integer)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+      <Config Name="AMNEZIAWG_S4" Target="AMNEZIAWG_S4" Default="0" Mode="" Description="OPT: Random bytes to pad the encrypted transport data packets (Any positive integer)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+      <Config Name="AMNEZIAWG_H1" Target="AMNEZIAWG_H1" Default="0" Mode="" Description="OPT: header range of the handshake initiation message (n or range n-m, with values from 0 to 4294967295)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+      <Config Name="AMNEZIAWG_H2" Target="AMNEZIAWG_H2" Default="0" Mode="" Description="OPT: header range of the handshake response message (n or range n-m, with values from 0 to 4294967295)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+      <Config Name="AMNEZIAWG_H3" Target="AMNEZIAWG_H3" Default="0" Mode="" Description="OPT: header range of the handshake cookie reply message (n or range n-m, with values from 0 to 4294967295)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+      <Config Name="AMNEZIAWG_H4" Target="AMNEZIAWG_H4" Default="0" Mode="" Description="OPT: header range of the transport data message (n or range n-m, with values from 0 to 4294967295)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+      <Config Name="AMNEZIAWG_I1" Target="AMNEZIAWG_I1" Default="" Mode="" Description="OPT: See [custom signature packets](https://github.com/amnezia-vpn/amneziawg-go?tab=readme-ov-file#custom-signature-packets)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="AMNEZIAWG_I2" Target="AMNEZIAWG_I2" Default="" Mode="" Description="OPT: See [custom signature packets](https://github.com/amnezia-vpn/amneziawg-go?tab=readme-ov-file#custom-signature-packets)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="AMNEZIAWG_I3" Target="AMNEZIAWG_I3" Default="" Mode="" Description="OPT: See [custom signature packets](https://github.com/amnezia-vpn/amneziawg-go?tab=readme-ov-file#custom-signature-packets)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="AMNEZIAWG_I4" Target="AMNEZIAWG_I4" Default="" Mode="" Description="OPT: See [custom signature packets](https://github.com/amnezia-vpn/amneziawg-go?tab=readme-ov-file#custom-signature-packets)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="AMNEZIAWG_I5" Target="AMNEZIAWG_I5" Default="" Mode="" Description="OPT: See [custom signature packets](https://github.com/amnezia-vpn/amneziawg-go?tab=readme-ov-file#custom-signature-packets)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/amneziawg.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+    
     <!-- Control server options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/control-server.md -->
-    <Config Name="HTTP_CONTROL_SERVER_ADDRESS" Target="8000" Default="8000" Mode="TCP" Description="OPT: Listening address for the HTTP control server (Valid listening address)" Type="Port" Display="always" Required="false" Mask="false">8000</Config>
-    <Config Name="HTTP_CONTROL_SERVER_LOG" Target="HTTP_CONTROL_SERVER_LOG" Default="on|off" Mode="" Description="OPT: Enable logging of HTTP requests (on or off)" Type="Variable" Display="always" Required="false" Mask="false">on</Config>
-    <Config Name="HTTP_CONTROL_SERVER_AUTH_CONFIG_FILEPATH" Target="HTTP_CONTROL_SERVER_AUTH_CONFIG_FILEPATH" Default="/gluetun/auth/config.toml" Mode="" Description="OPT: Path to a TOML file containing authentication configuration (Valid path)" Type="Variable" Display="always" Required="false" Mask="false" />
-    <!-- Advanced options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/advanced/control-server.md -->
-    <Config Name="HTTP_CONTROL_SERVER_AUTH_DEFAULT_ROLE" Target="HTTP_CONTROL_SERVER_AUTH_DEFAULT_ROLE" Default="" Mode="" Description="ADV: For the lazies not willing to setup a configuration file (Valid JSON string)(https://github.com/qdm12/gluetun-wiki/blob/main/setup/advanced/control-server.md#configuration)" Type="Variable" Display="always" Required="false" Mask="false" />
+      <Config Name="HTTP_CONTROL_SERVER_ADDRESS" Target="8000" Default="8000" Mode="TCP" Description="OPT: Listening address for the HTTP control server (Valid listening address)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/control-server.md" Type="Port" Display="always" Required="false" Mask="false">8000</Config>
+      <Config Name="HTTP_CONTROL_SERVER_LOG" Target="HTTP_CONTROL_SERVER_LOG" Default="on|off" Mode="" Description="OPT: Enable logging of HTTP requests (on or off)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/control-server.md" Type="Variable" Display="always" Required="false" Mask="false">on</Config>
+      <Config Name="HTTP_CONTROL_SERVER_AUTH_CONFIG_FILEPATH" Target="HTTP_CONTROL_SERVER_AUTH_CONFIG_FILEPATH" Default="/gluetun/auth/config.toml" Mode="" Description="OPT: Path to a TOML file containing authentication configuration (Valid path)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/control-server.md" Type="Variable" Display="always" Required="false" Mask="false" />
+      <!-- Advanced options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/advanced/control-server.md -->
+      <Config Name="HTTP_CONTROL_SERVER_AUTH_DEFAULT_ROLE" Target="HTTP_CONTROL_SERVER_AUTH_DEFAULT_ROLE" Default="" Mode="" Description="ADV: For the lazies not willing to setup a configuration file (Valid JSON string)  
+        https://github.com/qdm12/gluetun-wiki/blob/main/setup/advanced/control-server.md#configuration" Type="Variable" Display="always" Required="false" Mask="false"/>
 
     <!-- DNS options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/dns.md -->
-    <Config Name="DNS_UPSTREAM_RESOLVER_TYPE" Target="DNS_UPSTREAM_RESOLVER_TYPE" Default="dot|doh|plain" Mode="" Description="OPT: How to connect to the upstream DNS servers. dot means DNS over TLS, doh means DNS over HTTPS, plain means plain UDP DNS. (dot, doh or plain)" Type="Variable" Display="always" Required="false" Mask="false">dot</Config>
-    <Config Name="DNS_UPSTREAM_RESOLVERS" Target="DNS_UPSTREAM_RESOLVERS" Default="cira family|cira private|cira protected|cleanbrowsing adult|cleanbrowsing family|cleanbrowsing security|cloudflare|cloudflare family|cloudflare security|google|libredns|opendns|quad9|quad9 secured|quad9 unsecured|quadrant" Mode="" Description="Comma delimited list of DNS over TLS providers" Type="Variable" Display="always" Required="false" Mask="false">cloudflare</Config>
-    <Config Name="DNS_CACHING" Target="DNS_CACHING" Default="on|off" Mode="" Description="OPT: DNS caching (on,off)" Type="Variable" Display="always" Required="false" Mask="false">on</Config>
-    <Config Name="DNS_UPSTREAM_IPV6" Target="DNS_UPSTREAM_IPV6" Default="off|on" Mode="" Description="OPT: DNS IPv6 resolution" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
-    <Config Name="DNS_BLOCK_IPS" Target="DNS_BLOCK_IPS" Default="" Mode="" Description="OPT: Comma separated list of IP addresses to not resolve public domains to. (Any valid IP address)" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="DNS_BLOCK_IP_PREFIXES" Target="DNS_BLOCK_IP_PREFIXES" Default="" Mode="" Description="OPT: Comma separated list of CIDRs to not resolve public domains to." Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="DNS_REBINDING_PROTECTION_EXEMPT_HOSTNAMES" Target="DNS_REBINDING_PROTECTION_EXEMPT_HOSTNAMES" Default="" Mode="" Description="OPT: Public domain names to exclude from DNS rebinding protection (Comma separated list of public domain names)" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="DNS_UPDATE_PERIOD" Target="DNS_UPDATE_PERIOD" Default="24h" Mode="" Description="OPT: Period to update block lists and cryptographic files and restart Unbound. Set to 0 to deactivate updates. (i.e. 0, 30s, 5m, 24h)" Type="Variable" Display="always" Required="false" Mask="false">24h</Config>
+    <Config Name="DNS_UPSTREAM_RESOLVER_TYPE" Target="DNS_UPSTREAM_RESOLVER_TYPE" Default="dot|doh|plain" Mode="" Description="OPT: How to connect to the upstream DNS servers. dot means DNS over TLS, doh means DNS over HTTPS, plain means plain UDP DNS. (dot, doh or plain)  
+      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/dns.md" Type="Variable" Display="always" Required="false" Mask="false">dot</Config>
+    <Config Name="DNS_UPSTREAM_RESOLVERS" Target="DNS_UPSTREAM_RESOLVERS" Default="cira family|cira private|cira protected|cleanbrowsing adult|cleanbrowsing family|cleanbrowsing security|cloudflare|cloudflare family|cloudflare security|google|libredns|opendns|quad9|quad9 secured|quad9 unsecured|quadrant" Mode="" Description="Comma delimited list of DNS over TLS providers  
+      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/dns.md" Type="Variable" Display="always" Required="false" Mask="false">cloudflare</Config>
+    <Config Name="DNS_CACHING" Target="DNS_CACHING" Default="on|off" Mode="" Description="OPT: DNS caching (on,off)  
+      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/dns.md" Type="Variable" Display="always" Required="false" Mask="false">on</Config>
+    <Config Name="DNS_UPSTREAM_IPV6" Target="DNS_UPSTREAM_IPV6" Default="off|on" Mode="" Description="OPT: DNS IPv6 resolution  
+      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/dns.md" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
+    <Config Name="DNS_BLOCK_IPS" Target="DNS_BLOCK_IPS" Default="" Mode="" Description="OPT: Comma separated list of IP addresses to not resolve public domains to. (Any valid IP address)  
+      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/dns.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="DNS_BLOCK_IP_PREFIXES" Target="DNS_BLOCK_IP_PREFIXES" Default="" Mode="" Description="OPT: Comma separated list of CIDRs to not resolve public domains to.  
+      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/dns.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="DNS_REBINDING_PROTECTION_EXEMPT_HOSTNAMES" Target="DNS_REBINDING_PROTECTION_EXEMPT_HOSTNAMES" Default="" Mode="" Description="OPT: Public domain names to exclude from DNS rebinding protection (Comma separated list of public domain names)  
+      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/dns.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="DNS_UPDATE_PERIOD" Target="DNS_UPDATE_PERIOD" Default="24h" Mode="" Description="OPT: Period to update block lists and cryptographic files and restart Unbound. Set to 0 to deactivate updates. (i.e. 0, 30s, 5m, 24h)  
+      https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/dns.md" Type="Variable" Display="always" Required="false" Mask="false">24h</Config>
     <Config Name="BLOCK_MALICIOUS" Target="BLOCK_MALICIOUS" Default="on|off" Mode="" Description="OPT: Block malicious hostnames and IPs (on, off)" Type="Variable" Display="always" Required="false" Mask="false">on</Config>
     <Config Name="BLOCK_SURVEILLANCE" Target="BLOCK_SURVEILLANCE" Default="off|on" Mode="" Description="OPT: Block surveillance hostnames and IPs (on, off)" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
     <Config Name="BLOCK_ADS" Target="BLOCK_ADS" Default="off|on" Mode="" Description="OPT: Block ads hostnames and IPs" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
