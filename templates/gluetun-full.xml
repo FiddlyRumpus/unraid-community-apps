@@ -3,7 +3,7 @@
   <Repository>qmcgaw/gluetun</Repository>
   
   <Category>Network:VPN Network:Privacy Security: Tools:Utilities</Category>
-  <Icon>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun/Icon.svg</Icon>
+  <Icon>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon.svg</Icon>
   <Overview>Gluetun - VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.<br/>Gluetun-Full is an attempt to: include ALL of the published paths, ports, &amp; variables available for Gluetun (set to their defaults) from the upstream project, repo, &amp; wiki; to keep them ALL up-to-date as much as possible; and to include useful Gluetun-Wiki URLs for each config item; all presented in a useful Community Application for the Unraid community.</Overview>
   <Project>https://github.com/passteque/gluetun</Project>
   <Support>https://forums.unraid.net/topic/199320-support-fiddlyrumpus-gluetun-full</Support>
@@ -22,13 +22,6 @@
   <Requires/>
   <Shell>bash</Shell>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
-  
-  <ExtraSearchTerms>glue gluten glutin gluetin glutton gluton</ExtraSearchTerms>
-  <Icon-azure>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun/Icon-azure.svg</Icon-azure>
-  <Icon-black>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun/Icon-black.svg</Icon-black>
-  <Icon-gray>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun/Icon-gray.svg</Icon-gray>
-  <Icon-white>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun/Icon-white.svg</Icon-white>
-  <Maintainer>No relation to Mr. Frumpus.</Maintainer>
   
   <Config>
     <Config Name="Volume" Target="/gluetun" Default="/mnt/cache/appdata/gluetun-full" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/gluetun-full</Config>
@@ -204,4 +197,10 @@
       
     <!-- <Config Name="" Target="" Default="" Mode="" Description="" Type="" Display="always" Required="false" Mask="false"/> -->
   </Config>
+  <ExtraSearchTerms>glue gluten glutin gluetin glutton gluton</ExtraSearchTerms>
+  <Icon-azure>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-azure.svg</Icon-azure>
+  <Icon-black>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-black.svg</Icon-black>
+  <Icon-gray>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-gray.svg</Icon-gray>
+  <Icon-white>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-white.svg</Icon-white>
+  <Maintainer>No relation to Mr. Frumpus.</Maintainer>
 </Container>
