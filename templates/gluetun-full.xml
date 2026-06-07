@@ -1,6 +1,6 @@
 <Container version="2">
   <Name>Gluetun-Full</Name>
-  <Repository>qmcgaw/gluetun</Repository>
+  <Repository>ghcr.io/qdm12/gluetun:latest</Repository>
   
   <Category>Network:VPN Network:Privacy Security: Tools:Utilities</Category>
   <Icon>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon.png</Icon>
@@ -19,7 +19,7 @@
   <Network>bridge</Network>
   <Privileged>false</Privileged>
   <ReadMe>https://github.com/passteque/gluetun/blob/master/README.md</ReadMe>
-  <Registry>https://hub.docker.com/r/qmcgaw/gluetun</Registry>
+  <Registry>https://ghcr.io/qdm12/gluetun</Registry>
   <Requires/>
   <Shell>bash</Shell>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
@@ -31,7 +31,7 @@
 
     <!-- VPN options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md -->
     <Config Name="VPN_SERVICE_PROVIDER" Target="VPN_SERVICE_PROVIDER" Default="airvpn|custom|cyberghost|expressvpn|fastestvpn|giganews|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|private internet access|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|windscribe" Mode="" Description="REQ: Specify a supported VPN provider to use (Valid VPN provider) https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
-    <Config Name="VPN_TYPE" Target="VPN_TYPE" Default="openvpn|wireguard" Mode="" Description="REQ: VPN protocol to use. Not all providers support Wireguard. (openvpn or wireguard) https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="true" Mask="false">openvpn</Config>
+    <Config Name="VPN_TYPE" Target="VPN_TYPE" Default="openvpn|wireguard" Mode="" Description="REQ: VPN protocol to use. Not all providers support Wireguard. (openvpn or wireguard)<br/>https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="true" Mask="false">openvpn</Config>
     <Config Name="VPN_INTERFACE" Target="VPN_INTERFACE" Default="tun0" Mode="" Description="REQ: Specify a custom network interface name to use (Any interface name) https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="true" Mask="false">tun0</Config>
     <Config Name="VPN_UP_COMMAND" Target="VPN_UP_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes up. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command) https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="VPN_DOWN_COMMAND" Target="VPN_DOWN_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes down. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command) https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
@@ -197,8 +197,7 @@
     <Config Name="STORAGE_SERVERS_DIRECTORY_PATH" Target="STORAGE_SERVERS_DIRECTORY_PATH" Default="/gluetun/servers" Mode="" Description="OPT: Path to the directory where server files are stored (Valid directory path) https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/storage.md" Type="Variable" Display="always" Required="false" Mask="false">/gluetun/servers</Config>
       
     <!-- <Config Name="" Target="" Default="" Mode="" Description="" Type="" Display="always" Required="false" Mask="false"/> -->
-  </Config>
-<!--  
+  </Config>  
   <Changes>2026-06-06 Initial relase. Gluetun v3.41.1</Changes>
   <ExtraSearchTerms>glue gluten glutin gluetin glutton gluton</ExtraSearchTerms>
   <Icon-azure>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-azure.png</Icon-azure>
@@ -206,5 +205,4 @@
   <Icon-gray>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-gray.png</Icon-gray>
   <Icon-white>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-white.png</Icon-white>
   <Maintainer>No relation to Mr. Frumpus.</Maintainer>
--->
 </Container>
