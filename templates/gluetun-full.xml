@@ -1,6 +1,6 @@
 <Container version="2">
   <Name>Gluetun-Full</Name>
-  <Repository>qmcgaw/gluetun</Repository>
+  <Repository>ghcr.io/qmd12/gluetun:latest</Repository>
   
   <Category>Network:VPN Network:Privacy Security: Tools:Utilities</Category>
   <Icon>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon.png</Icon>
@@ -19,7 +19,7 @@
   <Network>bridge</Network>
   <Privileged>false</Privileged>
   <ReadMe>https://github.com/passteque/gluetun/blob/master/README.md</ReadMe>
-  <Registry>https://hub.docker.com/r/qmcgaw/gluetun</Registry>
+  <Registry>https://ghcr.io/qmd12/gluetun</Registry>
   <Requires/>
   <Shell>bash</Shell>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
@@ -30,7 +30,7 @@
   <Icon-black>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-black.png</Icon-black>
   <Icon-gray>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-gray.png</Icon-gray>
   <Icon-white>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-white.png</Icon-white>
-  <Maintainer>No relation to Mr. Frumpus.</Maintainer>
+  <Maintainer>FiddlyRumpus. No relation to Mr. Frumpus.</Maintainer>
   
   <Config>
     <Config Name="Volume" Target="/gluetun" Default="/mnt/cache/appdata/gluetun-full" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/gluetun-full</Config>
@@ -115,9 +115,9 @@
     <Config Name="VPN_PORT_FORWARDING_DOWN_COMMAND" Target="VPN_PORT_FORWARDING_DOWN_COMMAND" Default="" Mode="" Description="OPT: Command to run when port forwarding has finished tearing down. (Shell command)<br/>https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/port-forwarding.md" Type="Variable" Display="advanced" Required="false" Mask="false"/>
   
     <!-- Provider options: https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers -->
-    <Config Name="SERVER_COUNTRIES" Target="SERVER_COUNTRIES" Default="" Mode="" Description="OPT: Comma separated list of countries (providers: airvpn,cyberghost,expressvpn,fastestvpn,hidemyass,ipvanish,ivpn,mullvad,nordvpn,privado,privatevpn,protonvpn,purevpn,slickvpn,surfshark,torguard,vpn unlimited)<br/>https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="SERVER_REGIONS" Target="SERVER_REGIONS" Default="" Mode="" Description="OPT: Comma separated list of regions (providers: airvpn,giganews,hidemyass,nordvpn,privado,private internet access,protonvpn,purevpn,slickvpn,surfshark,vpn secure,vpn unlimited,vyprvpn,windscribe)<br/>https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="SERVER_CITIES" Target="SERVER_CITIES" Default="" Mode="" Description="OPT: Comma separated list of cities (providers: airvpn,expressvpn,fastestvpn,hidemyass,ipvanish,ivpn,mullvad,nordvpn,perfect privacy,privado,privatevpn,protonvpn,purevpn,slickvpn,surfshark,torguard,vpn secure,vpn unlimited,windscribe)<br/>https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="SERVER_COUNTRIES" Target="SERVER_COUNTRIES" Default="" Mode="" Description="OPT: Comma separated list of countries<br/>(providers: airvpn,cyberghost,expressvpn,fastestvpn,hidemyass,ipvanish,ivpn,mullvad,nordvpn,privado,privatevpn,protonvpn,purevpn,slickvpn,surfshark,torguard,vpn unlimited)<br/>https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="SERVER_REGIONS" Target="SERVER_REGIONS" Default="" Mode="" Description="OPT: Comma separated list of regions<br/>(providers: airvpn,giganews,hidemyass,nordvpn,privado,private internet access,protonvpn,purevpn,slickvpn,surfshark,vpn secure,vpn unlimited,vyprvpn,windscribe)<br/>https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="SERVER_CITIES" Target="SERVER_CITIES" Default="" Mode="" Description="OPT: Comma separated list of cities<br/>(providers: airvpn,expressvpn,fastestvpn,hidemyass,ipvanish,ivpn,mullvad,nordvpn,perfect privacy,privado,privatevpn,protonvpn,purevpn,slickvpn,surfshark,torguard,vpn secure,vpn unlimited,windscribe)<br/>https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="SERVER_NAMES" Target="SERVER_NAMES" Default="" Mode="" Description="OPT: Comma separated list of server names (providers: airvpn,private internet access)<br/>https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="SERVER_HOSTNAMES" Target="SERVER_HOSTNAMES" Default="" Mode="" Description="OPT: Comma separated list of server hostnames. Beware this is the narrowest filter, so if you set this to a single hostname and this hostname disappears from the Gluetun servers data due to an update, your container will no longer work until this filter is changed. I would suggest avoiding it unless you know this reliability risk. (providers: all EXCEPT perfect privacy)<br/>https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="ISP" Target="ISP" Default="" Mode="" Description="OPT: Comma separated list of ISPs (providers: ivpn, mullvad)<br/>https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers" Type="Variable" Display="always" Required="false" Mask="false"/>
