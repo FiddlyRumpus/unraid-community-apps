@@ -1,10 +1,10 @@
 <Container version="2">
   <Name>Gluetun-Full</Name>
-  <Repository>qdm12/gluetun:latest</Repository>
+  <Repository>ghcr.io/qdm12/gluetun:latest</Repository>
   
   <Category>Network:VPN Network:Privacy Security: Tools:Utilities</Category>
   <Icon>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon.png</Icon>
-  <Overview>Gluetun - VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.<br/><br/>Gluetun-Full is an attempt to: include ALL of the published paths, ports, &amp; variables available for Gluetun (set to their defaults) from the upstream project, repo, &amp; wiki; to keep them ALL up-to-date as much as possible; and to include useful Gluetun-Wiki URLs for each config item; all presented in a useful Community Application for the Unraid community.</Overview>
+  <Overview>Gluetun - VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in. 'Gluetun-Full' is an attempt to: include ALL of the published paths, ports, &amp; variables available for Gluetun (set to their defaults) from the upstream project, repo, &amp; wiki; to keep them ALL up-to-date as much as possible; and to include useful Gluetun-Wiki URLs for each config item; all presented in a useful Community Application for the Unraid community.</Overview>
   <Project>https://github.com/passteque/gluetun</Project>
   <Support>https://forums.unraid.net/topic/199320-support-fiddlyrumpus-gluetun-full</Support>
   <TemplateURL>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/templates/gluetun-full.xml</TemplateURL>
@@ -19,7 +19,7 @@
   <Network>bridge</Network>
   <Privileged>false</Privileged>
   <ReadMe>https://github.com/passteque/gluetun/blob/master/README.md</ReadMe>
-  <Registry>https://ghcr.io</Registry>
+  <Registry>https://ghcr.io/qdm12/gluetun</Registry>
   <Requires/>
   <Shell>bash</Shell>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
