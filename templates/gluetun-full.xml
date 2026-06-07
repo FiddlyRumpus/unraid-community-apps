@@ -13,6 +13,7 @@
   <Deprecated>false</Deprecated>
   <Description/>
   <DonateLink/>
+  <DonateText/>
   <ExtraParams>--cap-add=NET_ADMIN --device /dev/net/tun:/dev/net/tun</ExtraParams>
   <MyIP/>
   <Network>bridge</Network>
@@ -197,11 +198,13 @@
       
     <!-- <Config Name="" Target="" Default="" Mode="" Description="" Type="" Display="always" Required="false" Mask="false"/> -->
   </Config>
+<!--  
   <Changes>2026-06-06 Initial relase. Gluetun v3.41.1</Changes>
   <ExtraSearchTerms>glue gluten glutin gluetin glutton gluton</ExtraSearchTerms>
-  <Icon-azure>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-azure.svg</Icon-azure>
-  <Icon-black>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-black.svg</Icon-black>
-  <Icon-gray>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-gray.svg</Icon-gray>
-  <Icon-white>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-white.svg</Icon-white>
+  <Icon-azure>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-azure.png</Icon-azure>
+  <Icon-black>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-black.png</Icon-black>
+  <Icon-gray>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-gray.png</Icon-gray>
+  <Icon-white>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-white.png</Icon-white>
   <Maintainer>No relation to Mr. Frumpus.</Maintainer>
+-->
 </Container>
