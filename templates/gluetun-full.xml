@@ -357,6 +357,18 @@
   <ExtraSearchTerms>
     glue gluten glutin gluetin glutton gluton
   </ExtraSearchTerms>
+  <Icon-azure>
+    https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun/Icon-azure.svg  
+  </Icon-azure>
+  <Icon-black>
+    https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun/Icon-black.svg  
+  </Icon-black>
+  <Icon-gray>
+    https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun/Icon-gray.svg  
+  </Icon-gray>
+  <Icon-white>
+    https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun/Icon-white.svg  
+  </Icon-white>
   <Maintainer>
     No relation to Mr. Frumpus.
   </Maintainer>
