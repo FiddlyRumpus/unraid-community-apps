@@ -1,6 +1,6 @@
 <Container version="2">
   <Name>Gluetun-Full</Name>
-  <Repository>ghcr.io/qdm12/gluetun:latest</Repository>
+  <Repository>qmcgaw/gluetun:latest</Repository>
   
   <Category>Network:VPN Network:Privacy Security: Tools:Utilities</Category>
   <Icon>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon.png</Icon>
@@ -19,7 +19,7 @@
   <Network>bridge</Network>
   <Privileged>false</Privileged>
   <ReadMe>https://github.com/passteque/gluetun/blob/master/README.md</ReadMe>
-  <Registry>https://ghcr.io</Registry>
+  <Registry>https://hub.docker.com/r/qmcgaw/gluetun</Registry>
   <Requires/>
   <Shell>bash</Shell>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
