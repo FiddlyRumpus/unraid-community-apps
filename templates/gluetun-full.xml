@@ -33,7 +33,7 @@
   <Maintainer>FiddlyRumpus. No relation to Mr. Frumpus.</Maintainer>
   
   <Config>
-    <Config Name="Volume" Target="/gluetun" Default="/mnt/cache/appdata/gluetun-full" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/gluetun-full</Config>
+    <Config Name="config" Target="/gluetun" Default="/mnt/cache/appdata/gluetun-full" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/gluetun-full</Config>
 
     <!-- Note: Section ordering roughly follows order ENV section at bottom of https://github.com/passteque/gluetun/blob/master/Dockerfile, line ordering follows individual wiki page tables -->
 
