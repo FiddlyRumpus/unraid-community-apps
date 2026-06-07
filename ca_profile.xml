@@ -1,6 +1,6 @@
 <CommunityApplications>
   <!-- Required profile -->
-  <Profile>This is a repo for CAs maintained by FiddlyRumpus. Current: Gluetun-Full.</Profile>
+  <Profile>CAs maintained by FiddlyRumpus. Current: Gluetun-Full.</Profile>
   <!-- Optional icon -->
   <Icon>https://raw.githubusercontent.com/fiddlyrumpus/unraid-community-apps/main/icon.png</Icon>
   <!-- Optional web page -->
