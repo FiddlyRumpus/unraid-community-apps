@@ -1,74 +1,52 @@
 <Container version="2">
-  <Name>
-    Gluetun-Full
-  </Name>
-  <Repository>
-    qmcgaw/gluetun
-  </Repository>
+  <Name>Gluetun-Full</Name>
+  <Repository>qmcgaw/gluetun</Repository>
   
-  <Category>
-    Network:VPN Network:Privacy Security: Tools:Utilities
-  </Category>
-  <Icon>
-    https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun/Icon.svg  
-  </Icon>
-  <Overview>
-    Gluetun - VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.
-    
-    Gluetun-Full is an attempt to: include ALL of the published paths, ports, &amp; variables available for Gluetun (set to their defaults) from the upstream project, repo, &amp; wiki; 
-    to keep them ALL up-to-date as much as possible; and to include useful Gluetun-Wiki URLs for each config item; all presented in a useful Community Application for the Unraid community.
-  </Overview>
-  <Project>
-    https://github.com/passteque/gluetun
-  </Project>
-  <Support>
-    https://forums.unraid.net/topic/199320-support-fiddlyrumpus-gluetun-full
-  </Support>
-  <TemplateURL>
-    https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/templates/gluetun-full.xml
-  </TemplateURL>
-  
-  <Beta>
-    false
-  </Beta>
+  <Category>Network:VPN Network:Privacy Security: Tools:Utilities</Category>
+  <Icon>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun/Icon.svg</Icon>
+  <Overview>Gluetun - VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in. Gluetun-Full is an attempt to: include ALL of the published paths, ports, &amp; variables available for Gluetun (set to their defaults) from the upstream project, repo, &amp; wiki; to keep them ALL up-to-date as much as possible; and to include useful Gluetun-Wiki URLs for each config item; all presented in a useful Community Application for the Unraid community.</Overview>
+  <Project>https://github.com/passteque/gluetun</Project>
+  <Support>https://forums.unraid.net/topic/199320-support-fiddlyrumpus-gluetun-full</Support>
+  <TemplateURL>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/templates/gluetun-full.xml</TemplateURL>
+  <Beta>false</Beta>
   <Config>
     <!-- <Config Name="" Target="" Default="" Mode="" Description="" Type="" Display="always" Required="false" Mask="false"/> -->
 
-      <Config Name="Volume" Target="/gluetun" Default="/mnt/cache/appdata/gluetun-full" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/gluetun-full</Config>
+    <Config Name="Volume" Target="/gluetun" Default="/mnt/cache/appdata/gluetun-full" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/gluetun-full</Config>
 
     <!-- Note: Section ordering roughly follows order ENV section at bottom of https://github.com/passteque/gluetun/blob/master/Dockerfile, line ordering follows individual wiki page tables -->
       
     <!-- VPN options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md -->
-      <Config Name="VPN_SERVICE_PROVIDER" Target="VPN_SERVICE_PROVIDER" Default="airvpn|custom|cyberghost|expressvpn|fastestvpn|giganews|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|private internet access|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|windscribe" 
-        Mode="" Description="REQ: Specify a supported VPN provider to use (Valid VPN provider)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
-      <Config Name="VPN_TYPE" Target="VPN_TYPE" Default="openvpn|wireguard" Mode="" Description="REQ: VPN protocol to use. Not all providers support Wireguard. (openvpn or wireguard)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="true" Mask="false">openvpn</Config>
-      <Config Name="VPN_INTERFACE" Target="VPN_INTERFACE" Default="tun0" Mode="" Description="REQ: Specify a custom network interface name to use (Any interface name)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="true" Mask="false">tun0</Config>
-      <Config Name="VPN_UP_COMMAND" Target="VPN_UP_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes up. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
-      <Config Name="VPN_DOWN_COMMAND" Target="VPN_DOWN_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes down. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="VPN_SERVICE_PROVIDER" Target="VPN_SERVICE_PROVIDER" Default="airvpn|custom|cyberghost|expressvpn|fastestvpn|giganews|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|private internet access|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|windscribe" 
+      Mode="" Description="REQ: Specify a supported VPN provider to use (Valid VPN provider)
+ https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
+      <Config Name="VPN_TYPE" Target="VPN_TYPE" Default="openvpn|wireguard" Mode="" Description="REQ: VPN protocol to use. Not all providers support Wireguard. (openvpn or wireguard)
+ https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="true" Mask="false">openvpn</Config>
+      <Config Name="VPN_INTERFACE" Target="VPN_INTERFACE" Default="tun0" Mode="" Description="REQ: Specify a custom network interface name to use (Any interface name)
+ https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="true" Mask="false">tun0</Config>
+      <Config Name="VPN_UP_COMMAND" Target="VPN_UP_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes up. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command)
+ https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+      <Config Name="VPN_DOWN_COMMAND" Target="VPN_DOWN_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes down. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command)
+ https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
     
     <!-- OpenVPN options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md -->
-      <Config Name="OPENVPN_USER" Target="OPENVPN_USER" Default="" Mode="" Description="REQ: OpenVPN username  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
-      <Config Name="OPENVPN_PASSWORD" Target="OPENVPN_PASSWORD" Default="" Mode="" Description="REQ: OpenVPN password  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="true"/>
-      <Config Name="OPENVPN_PROTOCOL" Target="OPENVPN_PROTOCOL" Default="udp|tcp" Mode="" Description="OPT: Network protocol to use, only valid for OpenVPN (udp or tcp)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false">udp</Config>
-      <Config Name="OPENVPN_VERSION" Target="OPENVPN_VERSION" Default="2.6|2.5" Mode="" Description="OPT: Set the OpenVPN version to run (2.5 or 2.6)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false">2.6</Config>
-      <Config Name="OPENVPN_ENDPOINT_IP" Target="OPENVPN_ENDPOINT_IP" Default="" Mode="" Description="OPT: Specify a generally optional target VPN server IP address to use (valid IP address)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
-      <Config Name="OPENVPN_ENDPOINT_PORT" Target="OPENVPN_ENDPOINT_PORT" Default="" Mode="" Description="OPT: Specify a generally optional target VPN server port number to use (valid port number)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
-      <Config Name="OPENVPN_VERBOSITY" Target="OPENVPN_VERBOSITY" Default="0|1|2|3|4|5|6" Mode="" Description="OPT: OpenVPN verbosity level (0 to 6)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
-      <Config Name="OPENVPN_FLAGS" Target="OPENVPN_FLAGS" Default="" Mode="" Description="OPT: Space delimited OpenVPN flags to pass to openvpn (Openvpn flags)  
-        https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
-      <Config Name="OPENVPN_ROOT" Target="OPENVPN_ROOT" Default="no|yes" Mode="" Description="OPT: Run OpenVPN as root (yes or no)  
+    <Config Name="OPENVPN_USER" Target="OPENVPN_USER" Default="" Mode="" Description="REQ: OpenVPN username  
+ https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="OPENVPN_PASSWORD" Target="OPENVPN_PASSWORD" Default="" Mode="" Description="REQ: OpenVPN password  
+ https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="OPENVPN_PROTOCOL" Target="OPENVPN_PROTOCOL" Default="udp|tcp" Mode="" Description="OPT: Network protocol to use, only valid for OpenVPN (udp or tcp)
+ https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false">udp</Config>
+    <Config Name="OPENVPN_VERSION" Target="OPENVPN_VERSION" Default="2.6|2.5" Mode="" Description="OPT: Set the OpenVPN version to run (2.5 or 2.6)
+ https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false">2.6</Config>
+    <Config Name="OPENVPN_ENDPOINT_IP" Target="OPENVPN_ENDPOINT_IP" Default="" Mode="" Description="OPT: Specify a generally optional target VPN server IP address to use (valid IP address)
+ https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="OPENVPN_ENDPOINT_PORT" Target="OPENVPN_ENDPOINT_PORT" Default="" Mode="" Description="OPT: Specify a generally optional target VPN server port number to use (valid port number)
+ https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="OPENVPN_VERBOSITY" Target="OPENVPN_VERBOSITY" Default="0|1|2|3|4|5|6" Mode="" Description="OPT: OpenVPN verbosity level (0 to 6)
+ https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
+    <Config Name="OPENVPN_FLAGS" Target="OPENVPN_FLAGS" Default="" Mode="" Description="OPT: Space delimited OpenVPN flags to pass to openvpn (Openvpn flags)
+ https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="OPENVPN_ROOT" Target="OPENVPN_ROOT" Default="no|yes" Mode="" Description="OPT: Run OpenVPN as root (yes or no)  
         https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false">no</Config>
       <Config Name="OPENVPN_CIPHERS" Target="OPENVPN_CIPHERS" Default="" Mode="" Description="OPT: Specify a custom cipher to use. It will also set ncp-disable if using AES GCM for PIA (i.e. aes-256-gcm)  
         https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md" Type="Variable" Display="always" Required="false" Mask="false"/>
