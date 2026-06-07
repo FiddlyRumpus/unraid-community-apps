@@ -10,7 +10,6 @@
   <TemplateURL>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/templates/gluetun-full.xml</TemplateURL>
   
   <Beta>false</Beta>
-  <Changes>2026-06-06 Initial relase. Gluetun v3.41.1</Changes>
   <Deprecated>false</Deprecated>
   <Description/>
   <ExtraParams>--cap-add=NET_ADMIN --device /dev/net/tun:/dev/net/tun</ExtraParams>
@@ -20,7 +19,7 @@
   <ReadMe>https://github.com/passteque/gluetun/blob/master/README.md</ReadMe>
   <Registry>https://hub.docker.com/r/qmcgaw/gluetun</Registry>
   <Requires/>
-  <Shell>bash</Shell>
+  <Shell>sh</Shell>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
   
   <Config>
@@ -197,6 +196,7 @@
       
     <!-- <Config Name="" Target="" Default="" Mode="" Description="" Type="" Display="always" Required="false" Mask="false"/> -->
   </Config>
+  <Changes>2026-06-06 Initial relase. Gluetun v3.41.1</Changes>
   <ExtraSearchTerms>glue gluten glutin gluetin glutton gluton</ExtraSearchTerms>
   <Icon-azure>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-azure.svg</Icon-azure>
   <Icon-black>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-black.svg</Icon-black>
