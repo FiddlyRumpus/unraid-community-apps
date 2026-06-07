@@ -1,6 +1,6 @@
 <Container version="2">
   <Name>Gluetun-Full</Name>
-  <Repository>qmcgaw/gluetun</Repository>
+  <Repository>ghcr.io/qdm12/gluetun:latest</Repository>
   
   <Category>Network:VPN Network:Privacy Security: Tools:Utilities</Category>
   <Icon>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon.png</Icon>
@@ -19,18 +19,18 @@
   <Network>bridge</Network>
   <Privileged>false</Privileged>
   <ReadMe>https://github.com/passteque/gluetun/blob/master/README.md</ReadMe>
-  <Registry>https://hub.docker.com/r/qmcgaw/gluetun</Registry>
+  <Registry>https://ghcr.io/qdm12/gluetun</Registry>
   <Requires/>
   <Shell>bash</Shell>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
 
-  <Changes>2026-06-06 Initial relase. Gluetun v3.41.1</Changes>
-  <ExtraSearchTerms>glue gluten glutin gluetin glutton gluton</ExtraSearchTerms>
-  <Icon-azure>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-azure.png</Icon-azure>
-  <Icon-black>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-black.png</Icon-black>
-  <Icon-gray>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-gray.png</Icon-gray>
-  <Icon-white>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-white.png</Icon-white>
-  <Maintainer>No relation to Mr. Frumpus.</Maintainer>
+  <!-- <Changes>2026-06-06 Initial relase. Gluetun v3.41.1</Changes> -->
+  <!-- <ExtraSearchTerms>glue gluten glutin gluetin glutton gluton</ExtraSearchTerms> -->
+  <!-- <Icon-azure>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-azure.png</Icon-azure> -->
+  <!-- <Icon-black>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-black.png</Icon-black> -->
+  <!-- <Icon-gray>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-gray.png</Icon-gray> -->
+  <!-- <Icon-white>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-white.png</Icon-white> -->
+  <!-- <Maintainer>No relation to Mr. Frumpus.</Maintainer> -->
   
   <Config>
     <Config Name="Volume" Target="/gluetun" Default="/mnt/cache/appdata/gluetun-full" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/gluetun-full</Config>
