@@ -9,16 +9,14 @@
   <!-- <Forum>https://forums.unraid.net/topic/YOUR_SUPPORT_TOPIC</Forum> -->
   <!-- Optional Discord link -->
   <Discord>https://discord.gg/nqBRkrnYK2</Discord>
-  <!--  
   <!-- Optional donation link -->
-  <DonateLink>https://github.com/sponsors/YOUR_GITHUB_USERNAME</DonateLink>
+  <!-- <DonateLink>https://github.com/sponsors/YOUR_GITHUB_USERNAME</DonateLink> -->
   <!-- Optional donation text -->
-  <DonateText>Support this project</DonateText>
+  <!-- <DonateText>Support this project</DonateText> -->
   <!-- Optional photos -->
-  <Photo>URL to any photos</Photo>
+  <!-- <Photo>URL to any photos</Photo> -->
   <!-- You can add multiple photos by adding multiple <Photo> tags -->
   <!-- Optional videos -->
-  <Video>URL to any video.  Youtube URLs are recommended</Video>
-  <!-- You can add multiple videos by adding multiple <Video> tags --> 
-  -->
+  <!-- <Video>URL to any video.  Youtube URLs are recommended</Video> -->
+  <!-- You can add multiple videos by adding multiple <Video> tags -->
 </CommunityApplications>
