@@ -1,6 +1,6 @@
 <Container version="2">
   <Name>Gluetun-Full</Name>
-  <Repository>ghcr.io/qdm12/gluetun:latest</Repository>
+  <Repository>ghcr.io/qdm12/gluetun</Repository>
   
   <Category>Network:VPN Network:Privacy Security: Tools:Utilities</Category>
   <Icon>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon.png</Icon>
@@ -12,8 +12,8 @@
   <Beta>false</Beta>
   <Deprecated>false</Deprecated>
   <Description/>
-  <DonateLink/>
-  <DonateText/>
+  <!-- <DonateLink/> -->
+  <!-- <DonateText/> -->
   <ExtraParams>--cap-add=NET_ADMIN --device /dev/net/tun:/dev/net/tun</ExtraParams>
   <MyIP/>
   <Network>bridge</Network>
@@ -21,7 +21,7 @@
   <ReadMe>https://github.com/passteque/gluetun/blob/master/README.md</ReadMe>
   <Registry>https://ghcr.io/qdm12/gluetun</Registry>
   <Requires/>
-  <Shell>sh</Shell>
+  <Shell>bash</Shell>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
 
   <!-- <Changes>2026-06-06 Initial relase. Gluetun v3.41.1</Changes> -->
