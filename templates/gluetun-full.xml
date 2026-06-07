@@ -169,7 +169,7 @@
       <Config Name="VPN_PORT_FORWARDING" Target="VPN_PORT_FORWARDING" Default="off|on" Mode="" Description="OPT: Enable custom port forwarding code for supported providers (off or on)  
         https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/port-forwarding.md" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
       <Config Name="VPN_PORT_FORWARDING_PROVIDER" Target="VPN_PORT_FORWARDING_PROVIDER" Default="private internet access|perfect privacy|privatevpn|protonvpn" Mode="" Description="OPT: Choose the custom port forwarding code to use. This is useful when using the custom provider with Wireguard. 
-        For PIA, make sure you set SERVER_NAMES=<server-name>. (private internet access, perfect privacy, privatevpn, protonvpn)  
+        For PIA, make sure you set SERVER_NAMES=&lt;server-name&gt;. (private internet access, perfect privacy, privatevpn, protonvpn)  
         https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/port-forwarding.md" Type="Variable" Display="always" Required="false" Mask="false"/>
       <Config Name="VPN_PORT_FORWARDING_PORTS_COUNT" Target="VPN_PORT_FORWARDING_PORTS_COUNT" Default="1|2|3|4|5" Mode="" Description="OPT: Number of TCP+UDP ports to forward. Can be up to 5 for ProtonVPN. (Depends on VPN provider)  
         https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/port-forwarding.md" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
