@@ -21,7 +21,6 @@
   <DonateLink/>
   <Requires/>
 
-<!--
   <Beta>false</Beta>
   <Changes>2026-06-07 Initial relase. Gluetun v3.41.1</Changes>
   <Deprecated>false</Deprecated>
@@ -32,7 +31,6 @@
   <Icon-gray>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-gray.png</Icon-gray>
   <Icon-white>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-white.png</Icon-white>
   <Maintainer>FiddlyRumpus. No relation to Mr. Frumpus.</Maintainer>
--->
   
   <Config Name="config" Target="/gluetun" Default="/mnt/cache/appdata/gluetun-full" Mode="rw" Description="" Type="Path" Display="Always" Required="false" Mask="false">/mnt/cache/appdata/gluetun-full</Config>
 
