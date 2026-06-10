@@ -23,14 +23,17 @@ to keep them ALL up-to-date as much as possible; and to include useful Gluetun-W
   <Requires/>
 
   <Maintainer>FiddlyRumpus. No relation to Mr. Frumpus.</Maintainer>  
-  <ExtraSearchTerms>glue gluten glutin gluetin glutton gluton</ExtraSearchTerms>
   <Icon-azure>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-azure.png</Icon-azure>
   <Icon-black>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-black.png</Icon-black>
   <Icon-gray>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-gray.png</Icon-gray>
   <Icon-white>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-white.png</Icon-white>
-  <Changes>2026-06-08 Initial relase. Gluetun v3.41.1<br/>
-2026-06-09 Rearranged descriptions, testing XML parser. Gluetun v3.41.1</Changes>
+  <Changes>
+###2026-06-08 
+- Initial relase. Gluetun v3.41.1
+###2026-06-09 
+- Rearranged descriptions, testing XML parser. Gluetun v3.41.1</Changes>
   <Description/>
+  <ExtraSearchTerms/>
   
   <Beta>false</Beta>
   <Deprecated>false</Deprecated>
