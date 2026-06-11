@@ -28,6 +28,8 @@ to keep them ALL up-to-date as much as possible; and to include useful Gluetun-W
   <Icon-gray>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-gray.png</Icon-gray>
   <Icon-white>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-white.png</Icon-white>
   <Changes>
+###2026-06-10
+- Adjusting descriptions. Gluetun v3.41.1
 ###2026-06-09
 - Rearranged descriptions, testing XML parser. Gluetun v3.41.1
 ###2026-06-08
@@ -44,19 +46,19 @@ to keep them ALL up-to-date as much as possible; and to include useful Gluetun-W
 
   <!-- VPN options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md -->
   <Config Name="VPN_SERVICE_PROVIDER" Target="VPN_SERVICE_PROVIDER" Default="airvpn|custom|cyberghost|expressvpn|fastestvpn|giganews|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|private internet access|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|windscribe" Mode="" Description="REQ: Specify a supported VPN provider to use (Valid VPN provider)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="Always" Required="true" Mask="false">private internet access</Config>
   <Config Name="VPN_TYPE" Target="VPN_TYPE" Default="openvpn|wireguard" Mode="" Description="REQ: VPN protocol to use. Not all providers support Wireguard. (openvpn or wireguard)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="Always" Required="true" Mask="false">openvpn</Config>
   <Config Name="VPN_INTERFACE" Target="VPN_INTERFACE" Default="tun0" Mode="" Description="REQ: Specify a custom network interface name to use (Any interface name)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="Always" Required="true" Mask="false">tun0</Config>
   <Config Name="VPN_UP_COMMAND" Target="VPN_UP_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes up. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="Advanced" Required="false" Mask="false"/>
   <Config Name="VPN_DOWN_COMMAND" Target="VPN_DOWN_COMMAND" Default="" Mode="" Description="OPT: Command to run when the VPN connection goes down. You can use the following template variables if needed: {{VPN_INTERFACE}} (Shell command)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/vpn.md" Type="Variable" Display="Advanced" Required="false" Mask="false"/>
     
   <!-- OpenVPN options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/openvpn.md -->
