@@ -14,7 +14,7 @@
 'Gluetun-Full' is an attempt to: include ALL of the published paths, ports, &amp;amp; variables available for Gluetun (set to their defaults) from the upstream project, repo, &amp;amp; wiki; to keep them ALL up-to-date as much as possible; and to include useful Gluetun-Wiki URLs for each config item; all presented in a useful template for the Unraid community.&#13;
 &#13;
 (Control server login: controlserver, controlserver)</Overview>
-  <Category>Network:VPN Network:Privacy Security: Tools:</Category>
+  <Category>Network:VPN Network:Privacy Security:</Category>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/templates/gluetun-full.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon.png</Icon>
@@ -29,20 +29,22 @@
   <Icon-gray>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-gray.png</Icon-gray>
   <Icon-white>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-white.png</Icon-white>
   <Changes>
+###2026-06-14
+- Fixing advanced options defaults.
 ###2026-06-13_02
-- Made PIA OpenVPN Encryption Preset advanced. Gluetun v3.41.1
+- Made PIA OpenVPN Encryption Preset advanced.
 ###2026-06-13_01
-- Adding ... Gluetun v3.41.1
+- Adding ...
 ###2026-06-12
-- Adding ... and adjusting names. Gluetun v3.41.1
+- Adding ... and adjusting names.
 ###2026-06-11
-- Adding full names, and ... Gluetun v3.41.1
+- Adding full names, and ...
 ###2026-06-10
-- Adjusting descriptions. Gluetun v3.41.1
+- Adjusting descriptions.
 ###2026-06-09
-- Rearranged descriptions, testing XML parser. Gluetun v3.41.1
+- Rearranged descriptions, testing XML parser.
 ###2026-06-08
-- Initial relase. Gluetun v3.41.1</Changes>
+- Initial relase.</Changes>
   <Description/>
   <ExtraSearchTerms>gluetun</ExtraSearchTerms>
   
@@ -150,7 +152,7 @@
   <!-- Firewall options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/firewall.md -->
   <Config Name="Firewall - VPN Input Ports" Target="FIREWALL_VPN_INPUT_PORTS" Default="" Mode="" Description="OPT: Comma separated list of ports to allow from the VPN server side (i.e. 1000,8080) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/firewall.md" Type="Variable" Display="advanced" Required="false" Mask="false"/>
   <Config Name="Firewall - Input Ports" Target="FIREWALL_INPUT_PORTS" Default="" Mode="" Description="OPT: Comma separated list of ports to allow through the default interface. This seems needed for Kubernetes sidecars. (i.e. 1000,8000) . https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/firewall.md" Type="Variable" Display="advanced" Required="false" Mask="false"/>
-  <Config Name="Firewall - iptables Log Level" Target="FIREWALL_IPTABLES_LOG_LEVEL" Default="debug|info|warn|error" Mode="" Description="OPT: Sets the log level for iptables commands. Use debug for detailed logging. (debug, info, warn, error) . . . . . . . . . . . . . . . . . . . . . . . . . . . https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/firewall.md" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Firewall - iptables Log Level" Target="FIREWALL_IPTABLES_LOG_LEVEL" Default="" Mode="" Description="OPT: Sets the log level for iptables commands. Use debug for detailed logging. (debug, info, warn, error) . . . . . . . . . . . . . . . . . . . . . . . . . . . https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/firewall.md" Type="Variable" Display="advanced" Required="false" Mask="false"/>
   <Config Name="Firewall - Outbound Subnets" Target="FIREWALL_OUTBOUND_SUBNETS" Default="" Mode="" Description="OPT: Comma separated subnets that Gluetun and the containers sharing its network stack are allowed to access. This involves firewall and routing modifications. (i.e. 192.168.1.0/24,192.168.10.121/32,10.0.0.5/28) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/firewall.md" Type="Variable" Display="always" Required="true" Mask="false"/>
 
   <!-- Healthcheck options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/healthcheck.md -->
@@ -202,7 +204,7 @@
   <Config Name="Updater - Prefer Direct Download" Target="UPDATER_PREFER_DIRECT_DOWNLOAD" Default="no|yes" Mode="" Description="OPT: Whether to prefer direct download of servers data from [gluetun-servers](https://github.com/qdm12/gluetun-servers/tree/main/pkg/servers), instead of using the Gluetun code to fetch, parse and process servers data. This is notably faster and more reliable, but defaults to no to avoid breaking compatibility. (yes or no) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="false">no</Config>
   <Config Name="Updater - Period" Target="UPDATER_PERIOD" Default="0|360h|480h" Mode="" Description="OPT: Period to update the VPN servers data in memory and to /gluetun/servers/. Set to 0 to disable. This does a burst of DNS over HTTPs requests, which may be blocked if you set BLOCK_MALICIOUS=on for example. (Valid duration string such as 480h) . . . . . . . . . . . . https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
   <Config Name="Updater - Min Ratio" Target="UPDATER_MIN_RATIO" Default="0.1|0.2|0.3|0.4|0.5|0.6|0.7|0.8|0.9|1" Mode="" Description="OPT: Ratio of servers to be found for the update to succeed, compared to the servers already built in the program (Ratio between 0 (excluded) and 1) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="advanced" Required="false" Mask="false">0.8</Config>
-  <Config Name="Updater - Service Providers" Target="UPDATER_VPN_SERVICE_PROVIDERS" Default="airvpn|custom|cyberghost|expressvpn|fastestvpn|giganews|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|private internet access|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|windscribe" Mode="" Description="OPT: List of providers to update servers data for, when the updater triggers periodically. If left empty, it defaults to the current VPN provider used at start. (Any valid VPN provider name) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Updater - Service Providers" Target="UPDATER_VPN_SERVICE_PROVIDERS" Default="" Mode="" Description="OPT: List of providers to update servers data for, when the updater triggers periodically. If left empty, it defaults to the current VPN provider used at start. (Any valid VPN provider name) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Updater - ProtonVPN Email" Target="UPDATER_PROTONVPN_EMAIL" Default="" Mode="" Description="OPT: If you need paid servers data, you must use a paid account. Otherwise I recommend creating a free throwaway account for this. (Your Proton email) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Updater - ProtonVPN Password" Target="UPDATER_PROTONVPN_PASSWORD" Default="" Mode="" Description="OPT: If you need paid servers data, you must use a paid account. Otherwise I recommend creating a free throwaway account for this. (Your Proton password) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md" Type="Variable" Display="always" Required="false" Mask="true"/>
 
