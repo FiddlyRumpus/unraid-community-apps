@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>Gluetun-Full</Name>
-  <Repository>ghcr.io/qmd12/gluetun:latest</Repository>
-  <Registry>https://ghcr.io/qmd12/gluetun</Registry>
+  <Repository>qmcgaw/gluetun:latest</Repository>
+  <Registry>https://hub.docker.com/r/qmcgaw/gluetun</Registry>
   <Network>bridge</Network>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -29,6 +29,8 @@
   <Icon-gray>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-gray.png</Icon-gray>
   <Icon-white>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-white.png</Icon-white>
   <Changes>
+###2026-06-15
+- Cannot pull image from ghcr.io. Switched to Docker Hub. Added CA_TS_FALLBACK_DIR variable.
 ###2026-06-14
 - Fixing advanced options defaults.
 ###2026-06-13_02
@@ -223,6 +225,9 @@
   <!-- Storage options: https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/storage.md -->
   <Config Name="Storage - Enabled" Target="STORAGE_SERVERS_ENABLED" Default="yes|no" Mode="" Description="OPT: Enable or disable reading and writing servers to disk (yes or no) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/storage.md" Type="Variable" Display="always" Required="false" Mask="false">yes</Config>
   <Config Name="Storage - Directory Path" Target="STORAGE_SERVERS_DIRECTORY_PATH" Default="/gluetun/servers" Mode="" Description="OPT: Path to the directory where server files are stored (Valid directory path) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/storage.md" Type="Variable" Display="advanced" Required="false" Mask="false">/gluetun/servers</Config>
-      
+
+  <!-- Variable for Tailscale in Unraid -->
+  <Config Name="Tailscale Fallback State Directory" Target="CA_TS_FALLBACK_DIR" Default="/gluetun" Mode="" Description="Fallback container directory for tailscale state information" Type="Variable" Display="advanced" Required="false" Mask="false">/gluetun</Config>
+  
   <!-- <Config Name="" Target="" Default="" Mode="" Description="" Type="" Display="always" Required="false" Mask="false"/> -->
 </Container>
