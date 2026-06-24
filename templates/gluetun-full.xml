@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Gluetun-Full</Name>
+  <Name>Gluetun (Full)</Name>
   <Repository>qmcgaw/gluetun:latest</Repository>
   <Registry>https://hub.docker.com/r/qmcgaw/gluetun</Registry>
   <Network>bridge</Network>
@@ -13,7 +13,7 @@
 &#13;
 VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.&#13;
 &#13;
-'Gluetun-Full' is an attempt to: include ALL of the published paths, ports, &amp;amp; variables available for Gluetun (set to their defaults) from the upstream project, repo, &amp;amp; wiki; to keep them ALL up-to-date as much as possible; and to include useful Gluetun-Wiki URLs for each config item; all presented in a useful template for the Unraid community.</Overview>
+'Gluetun (Full)' is an attempt to: include ALL of the published paths, ports, &amp;amp; variables available for Gluetun (set to their defaults) from the upstream project, repo, &amp;amp; wiki; to keep them ALL up-to-date as much as possible; and to include Gluetun-Wiki URLs for each config item; all presented in a useful template for the Unraid community.</Overview>
   <Category>Network:VPN Network:Privacy Security:</Category>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/templates/gluetun-full.xml</TemplateURL>
@@ -29,6 +29,8 @@ VPN client in a thin Docker container for multiple VPN providers, written in Go,
   <Icon-gray>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-gray.png</Icon-gray>
   <Icon-white>https://raw.githubusercontent.com/FiddlyRumpus/unraid-community-apps/refs/heads/main/icons/gluetun-full/Icon-white.png</Icon-white>
   <Changes>
+###2026-06-23
+- Updated name to clarify intent.
 ###2026-06-22
 - Cleaned up extraparams, changing host path to match other Gluetun apps, changed PUID and PGID.
 ###2026-06-15_02
